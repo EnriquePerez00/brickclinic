@@ -13,7 +13,7 @@ const About = () => {
         </Link>
 
         <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-8">
-          About Us
+          Sobre Nosotros
         </h1>
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">

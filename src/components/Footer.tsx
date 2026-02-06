@@ -32,8 +32,8 @@ const Footer = () => {
             <h4 className="font-bold mt-6 mb-4 text-sm uppercase tracking-wider opacity-70">Legal</h4>
             <ul className="space-y-2 text-sm opacity-70">
               <li><Link to="/privacy" className="hover:opacity-100 transition-opacity">Política de Privacidad</Link></li>
-              <li><Link to="/terms" className="hover:opacity-100 transition-opacity">Terms of Service</Link></li>
-              <li><Link to="/about" className="hover:opacity-100 transition-opacity">About Us</Link></li>
+              <li><Link to="/terms" className="hover:opacity-100 transition-opacity">Términos del Servicio</Link></li>
+              <li><Link to="/about" className="hover:opacity-100 transition-opacity">Sobre Nosotros</Link></li>
             </ul>
           </div>
 
@@ -42,20 +42,17 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-sm uppercase tracking-wider opacity-70">Contacto</h4>
             <ul className="space-y-3 text-sm opacity-70">
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" /> hola@brickclinic.es
+                <Mail className="h-4 w-4" /> info@brickclinic.es
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4" /> +34 612 345 678
-              </li>
-              <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" /> Madrid, España
+                <MapPin className="h-4 w-4" /> Barcelona, España
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-background/10 pt-8 text-center text-xs opacity-50">
-          © 2026 Brickclinic. All rights reserved.
+          © 2026 Brickclinic. Todos los derechos reservados.
         </div>
       </div>
     </footer>

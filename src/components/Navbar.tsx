@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "Servicios", href: "#servicios" },
   { label: "Cómo Funciona", href: "#como-funciona" },
+  { label: "Cuánto Cuesta", href: "#cuanto-cuesta" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -14,26 +15,30 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-      <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="/" className="flex items-center gap-2 text-primary font-extrabold text-xl">
-          <Blocks className="h-7 w-7" />
+      <div className="container mx-auto flex items-center justify-between h-20 px-4 relative">
+        <a href="/" className="flex items-center gap-2 text-primary font-extrabold text-2xl relative z-10">
+          <Blocks className="h-8 w-8" />
           <span>Brickclinic</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-base font-bold text-foreground/80 hover:text-primary transition-colors uppercase tracking-wide"
             >
               {l.label}
             </a>
           ))}
-          <Button size="sm">Solicitar Presupuesto</Button>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <div className="hidden md:block relative z-10 w-[140px]">
+          {/* Spacer to balance if needed, or actions area */}
+        </div>
+
+        <button className="md:hidden text-foreground relative z-10" onClick={() => setOpen(!open)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -57,7 +62,9 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">Solicitar Presupuesto</Button>
+              <a href="#presupuesto" onClick={() => setOpen(false)} className="w-full">
+                <Button size="sm" className="w-full">Solicitar Presupuesto</Button>
+              </a>
             </div>
           </motion.div>
         )}

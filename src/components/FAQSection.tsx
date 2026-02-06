@@ -8,49 +8,44 @@ import {
 
 const faqs = [
   {
-    question: "¿Qué tipo de piezas aceptáis?",
+    question: "¿Aceptáis todo tipo de piezas?",
     answer:
-      "Aceptamos piezas originales LEGO® y LEGO® Technic en buen estado. No aceptamos piezas rotas, muy deterioradas, piezas de otras marcas, pilas ni componentes electrónicos.",
+      "Aceptamos y trabajamos únicamente con piezas y minifiguras originales de LEGO®. Si nos haces llegar otro tipo de juguetes o piezas de otras marcas, las separaremos y te las devolveremos junto con tu pedido.",
   },
   {
-    question: "¿Clasificáis Minifiguras?",
+    question: "¿Podéis limpiar cualquier tipo de suciedad?",
     answer:
-      "No clasificamos Minifiguras ni Mini-dolls. Si encontramos alguna entre tus piezas, la separaremos con cuidado y te la devolveremos junto con el resto de tu pedido.",
+      "Limpiamos e higienizamos industrialmente utilizando tecnología hospitalaria, pero no hacemos milagros. Nos reservamos el derecho de devolverte (tal cual recibimos) piezas dañadas, no higienizables (rotuladores, corrosión, manchas de ácidos) o piezas con plástico abrasado por el sol o rozamiento.",
   },
   {
-    question: "¿Puedo enviar piezas parcialmente montadas?",
+    question: "¿Garantizáis que no habrá errores en la clasificación?",
     answer:
-      "Lo ideal es que desmontéis las piezas antes de enviarlas para optimizar el embalaje. Pero si no tienes tiempo, nosotros nos encargamos sin problema.",
+      "Trabajamos con piezas originales de segunda mano, proveedores oficiales y LEGO.com. Podemos cometer errores y se nos puede pasar alguna pieza... somos humanos. Si es el caso, avísanos y repondremos los posibles errores.",
   },
   {
-    question: "¿Cómo puedo estimar el peso de mis piezas?",
+    question: "¿Conseguís las minifiguras originales de los sets?",
     answer:
-      "Puedes pesarlas con una báscula de cocina o baño. Como referencia, una caja de zapatos llena de LEGO® pesa entre 1,5 y 2 kg. También puedes enviarnos una foto de la caja junto a un objeto de referencia y te damos una estimación.",
+      "Te podemos sugerir minifiguras de la misma serie que el set, pero no necesariamente las específicas que acompañan el set original si son muy caras u objetos de coleccionista difíciles de conseguir. Siempre te propondremos un sustituto original y posible.",
   },
   {
-    question: "¿Cada servicio es independiente?",
+    question: "¿Tengo que enviar los sets desmontados?",
     answer:
-      "Sí, cada uno de nuestros servicios (clasificación e higienización, montaje de sets, propuestas de sets alternativos y devolución separada) se contrata de forma independiente. Puedes elegir solo los que necesites.",
+      "Aceptamos sets desordenados, piezas mezcladas y sets semimontados. Te aconsejamos que los desmontes ya que ocuparán menos espacio y el envío será más eficiente. Pero si nos las envías juntas, también nos gusta desmontar LEGO y lo haremos por ti. Si algunas piezas no pudiesen separarse (¿pegamento?, ¿torsiones?, ¿plástico semidesgastado?), las dejaremos en un lado y las devolveremos.",
   },
   {
-    question: "¿Qué pasa si faltan piezas para completar un set?",
+    question: "¿Qué puedo esperar obtener de mis cajas de LEGO?",
     answer:
-      "Si faltan piezas, buscamos las originales necesarias para completar el set. Te informaremos del coste adicional antes de proceder con la compra.",
+      "Hay múltiples factores que afectan al número, variedad y coste de los sets que podemos recuperar. Un set completo al 80% es más barato de reconstruir que uno al 50%. Además, si es de series 'top ventas' como Star Wars, City o Technic, hay más volumen y mejor precio de recambios que en series minoritarias.",
   },
   {
-    question: "¿Podéis restaurar sets antiguos?",
+    question: "¿Recuperáis sets antiguos?",
     answer:
-      "¡Sí! Podemos trabajar con sets de cualquier época. Ten en cuenta que si faltan piezas, puede que utilicemos versiones actuales del mismo brick como sustitución.",
+      "Recuperamos sets posteriores a 1960. Sin embargo, ten en cuenta que el importe de las piezas para estos sets antiguos puede costar algo más debido a su escasez.",
   },
   {
-    question: "¿Recibiré mis propias piezas de vuelta?",
+    question: "¿Puedo hacer cualquier cosa con mis piezas?",
     answer:
-      "Por supuesto. Cada pedido se gestiona de forma individual. Tus piezas nunca se mezclan con las de otros clientes. Recibirás tus propios bricks, limpios y organizados.",
-  },
-  {
-    question: "¿Tenéis alguna relación con LEGO®?",
-    answer:
-      "No. Brickclinic es un servicio independiente y no está afiliado, respaldado ni conectado de ninguna forma con el Grupo LEGO. LEGO® y sus marcas asociadas son propiedad del Grupo LEGO.",
+      "Depende de la variedad. Con un cajón de 5kg de ladrillos 2x2 y 3x3 de colores azules, blancos y rojos... podemos hacer una bandera y alguna cosa más. Pero es posible que si no hay una variedad alta de piezas, las opciones de reconstrucción sean limitadas.",
   },
 ];
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import beforeImg from "@/assets/before-lego.jpg";
-import afterImg from "@/assets/after-lego.jpg";
+import beforeImg from "@/assets/carrusel1.png";
+import afterImg from "@/assets/carrusel2.png";
 
 const BeforeAfterSection = () => {
   const [position, setPosition] = useState(50);

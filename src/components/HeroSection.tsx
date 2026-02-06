@@ -40,13 +40,17 @@ const HeroSection = () => {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" className="text-base gap-2">
-              Descubre Nuestros Servicios
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-base">
-              Ver Cómo Funciona
-            </Button>
+            <a href="#servicios">
+              <Button size="lg" className="text-base gap-2">
+                Descubre Nuestros Servicios
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </a>
+            <a href="#como-funciona">
+              <Button size="lg" variant="outline" className="text-base">
+                Ver Cómo Funciona
+              </Button>
+            </a>
           </motion.div>
 
           <motion.p
