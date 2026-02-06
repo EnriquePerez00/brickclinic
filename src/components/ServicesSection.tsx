@@ -1,28 +1,36 @@
 import { motion } from "framer-motion";
-import { Droplets, Grid3X3, Puzzle } from "lucide-react";
+import { Droplets, Puzzle, Lightbulb, PackageOpen } from "lucide-react";
 
 const services = [
   {
     icon: Droplets,
-    title: "Sanitización",
+    title: "Clasificación e Higienización",
     description:
-      "Limpieza profunda pieza a pieza. Eliminamos suciedad, polvo y manchas con productos seguros para el plástico ABS. Tus bricks quedan como nuevos.",
+      "Separamos todas tus piezas por tipo, color y tamaño. Cada brick pasa por un proceso de limpieza manual con productos seguros para el plástico ABS. Tus piezas quedan impecables y perfectamente organizadas.",
     color: "text-primary",
     bg: "bg-primary/10",
   },
   {
-    icon: Grid3X3,
-    title: "Clasificación",
+    icon: Puzzle,
+    title: "Montaje de Sets",
     description:
-      "Ordenamos tus piezas por color, tipo o set original. Utilizamos catálogos oficiales para identificar cada pieza con precisión milimétrica.",
+      "Completamos tus sets a partir de las piezas originales que ya tienes. Identificamos las que faltan y las conseguimos para que puedas volver a construir como el primer día.",
     color: "text-accent",
     bg: "bg-accent/10",
   },
   {
-    icon: Puzzle,
-    title: "Completado de Sets",
+    icon: Lightbulb,
+    title: "Propuestas de Sets Alternativos",
     description:
-      "Identificamos las piezas que faltan para restaurar tus sets. Buscamos las piezas exactas para que puedas volver a construir como el primer día.",
+      "Ideamos y sugerimos construcciones alternativas u originales a partir de tus piezas existentes, complementándolas con piezas nuevas si es necesario. Creatividad sin límites.",
+    color: "text-brick-yellow",
+    bg: "bg-brick-yellow/10",
+  },
+  {
+    icon: PackageOpen,
+    title: "Devolución de Sets Separados",
+    description:
+      "Te devolvemos cada set perfectamente separado, embolsado e inventariado. Listo para guardar, exponer o regalar. Todo en orden.",
     color: "text-brick-red",
     bg: "bg-brick-red/10",
   },
@@ -41,19 +49,19 @@ const ServicesSection = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
             Nuestros Servicios
           </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            No somos una fábrica rápida, somos artesanos. Nos tomamos el tiempo para dejar tus piezas perfectas.
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            Cada servicio es independiente. Elige lo que necesitas y nosotros nos encargamos del resto. Precios y alcance a medida.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              transition={{ delay: i * 0.1 }}
               className="bg-card rounded-xl p-8 shadow-sm border border-border hover:shadow-md transition-shadow"
             >
               <div className={`inline-flex p-3 rounded-xl ${s.bg} mb-6`}>
@@ -63,6 +71,11 @@ const ServicesSection = () => {
               <p className="text-muted-foreground text-sm leading-relaxed">
                 {s.description}
               </p>
+              <div className="mt-4 pt-4 border-t border-border">
+                <span className="text-xs text-muted-foreground italic">
+                  Alcance y precio a determinar según volumen y complejidad
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>

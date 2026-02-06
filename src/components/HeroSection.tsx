@@ -6,11 +6,10 @@ import heroImage from "@/assets/hero-lego.jpg";
 const HeroSection = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-16 overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="LEGO bricks organized by color"
+          alt="Piezas LEGO organizadas y limpias"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -25,15 +24,13 @@ const HeroSection = () => {
             transition={{ duration: 0.7 }}
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-6 border border-accent/20">
-              ♻️ Economía circular para LEGO
+              ♻️ Recupera, organiza, construye
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-6 text-balance">
-              Damos una segunda vida a tus{" "}
-              <span className="text-primary">LEGOs</span>
+              Tus <span className="text-primary">LEGOs</span> merecen una segunda oportunidad
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              Servicio artesanal de limpieza, clasificación y completado de sets.
-              Especialistas en Star Wars, Technic y Architecture.
+              Clasificamos, higienizamos, montamos sets completos y te proponemos construcciones originales. Cada servicio a tu medida.
             </p>
           </motion.div>
 
@@ -44,7 +41,7 @@ const HeroSection = () => {
             className="flex flex-col sm:flex-row gap-4"
           >
             <Button size="lg" className="text-base gap-2">
-              Recupera tu Colección
+              Descubre Nuestros Servicios
               <ArrowRight className="h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="text-base">
@@ -58,7 +55,7 @@ const HeroSection = () => {
             transition={{ delay: 0.8 }}
             className="mt-8 text-sm text-muted-foreground"
           >
-            Solo piezas originales · Envío asegurado · Artesanos del brick
+            Solo piezas originales · Servicios independientes · Artesanos del brick
           </motion.p>
         </div>
       </div>

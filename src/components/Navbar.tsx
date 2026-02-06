@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button";
 const navLinks = [
   { label: "Servicios", href: "#servicios" },
   { label: "Cómo Funciona", href: "#como-funciona" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Sostenibilidad", href: "#sostenibilidad" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const Navbar = () => {
@@ -16,12 +15,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#" className="flex items-center gap-2 text-primary font-extrabold text-xl">
+        <a href="/" className="flex items-center gap-2 text-primary font-extrabold text-xl">
           <Blocks className="h-7 w-7" />
-          <span>BrickLink<span className="text-muted-foreground font-medium">.es</span></span>
+          <span>Brickclinic</span>
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
             <a
@@ -32,16 +30,14 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button size="sm">Recupera tu Colección</Button>
+          <Button size="sm">Solicitar Presupuesto</Button>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -61,7 +57,7 @@ const Navbar = () => {
                   {l.label}
                 </a>
               ))}
-              <Button size="sm" className="w-full">Recupera tu Colección</Button>
+              <Button size="sm" className="w-full">Solicitar Presupuesto</Button>
             </div>
           </motion.div>
         )}
