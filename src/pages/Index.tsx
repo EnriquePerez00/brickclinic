@@ -6,6 +6,7 @@ import ThemesMarquee from "@/components/ThemesMarquee";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import QuoteCalculator from "@/components/QuoteCalculator";
 import StatusTracker from "@/components/StatusTracker";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         <BeforeAfterSection />
         <QuoteCalculator />
         <StatusTracker />
+        <FAQSection />
       </main>
       <Footer />
     </div>
