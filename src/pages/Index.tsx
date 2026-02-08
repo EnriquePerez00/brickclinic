@@ -5,6 +5,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import ThemesMarquee from "@/components/ThemesMarquee";
 import BeforeAfterSection from "@/components/BeforeAfterSection";
 import QuoteCalculator from "@/components/QuoteCalculator";
+import CaseStudy from "@/components/CaseStudy";
 import StatusTracker from "@/components/StatusTracker";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
         <HowItWorksSection />
         <BeforeAfterSection />
         <QuoteCalculator />
+        <CaseStudy />
         <StatusTracker />
         <FAQSection />
       </main>

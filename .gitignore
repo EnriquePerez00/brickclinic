@@ -1,3 +1,4 @@
+
 # Logs
 logs
 *.log
@@ -23,3 +24,17 @@ dist-ssr
 *.sln
 *.sw?
 lego_inventory_data/
+
+# Environment Variables
+.env
+.env.production
+.env.development
+.vercel
+
+# AI Data (Local Only)
+ai_data/
+ai_models/
+supabase_inserts/
+omr_data/
+ldraw_cache/
+supabase/seed.sql

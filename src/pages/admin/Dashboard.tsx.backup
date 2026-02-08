@@ -1,0 +1,263 @@
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { LogOut, Home, Database, Copy, Sparkles, Download, Loader2 } from "lucide-react";
+import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+
+const Dashboard = () => {
+    const navigate = useNavigate();
+
+    // Inventory Generator State
+    const [setRef, setSetRef] = useState("");
+    const [csvData, setCsvData] = useState("");
+    const [isGenerating, setIsGenerating] = useState(false);
+
+    // Similar Sets State
+    const [csvFile, setCsvFile] = useState<File | null>(null);
+
+    // MOC Generator State
+    const [partsList, setPartsList] = useState("");
+    const [seedPart, setSeedPart] = useState("3001");
+    const [numSteps, setNumSteps] = useState(5);
+    const [generatedMOC, setGeneratedMOC] = useState<string | null>(null);
+    const [isMOCGenerating, setIsMOCGenerating] = useState(false);
+
+    // Auth check
+    useState(() => {
+        const isAuthenticated = localStorage.getItem("isAdminAuthenticated");
+        if (isAuthenticated !== "true") {
+            navigate("/admin/login");
+        }
+    });
+
+    const handleLogout = () => {
+        localStorage.removeItem("isAdminAuthenticated");
+        toast.info("Sesión cerrada");
+        navigate("/admin/login");
+    };
+
+    // === Inventory Generator ===
+    const handleGenerateInventory = async () => {
+        if (!setRef) {
+            toast.error("Ingresa una referencia de set");
+            return;
+        }
+
+        setIsGenerating(true);
+        try {
+            const { data, error } = await supabase.functions.invoke("generate-inventory-csv", {
+                body: { set_num: setRef },
+            });
+
+            if (error) throw error;
+
+            setCsvData(data.csv);
+            toast.success("CSV generado exitosamente!");
+        } catch (error: any) {
+            toast.error(error.message || "Error al generar CSV");
+        } finally {
+            setIsGenerating(false);
+        }
+    };
+
+    const handleDownloadCSV = () => {
+        const blob = new Blob([csvData], { type: "text/csv" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `inventory_${setRef}.csv`;
+        a.click();
+        URL.revokeObjectURL(url);
+        toast.success("CSV descargado!");
+    };
+
+    // === MOC Generator ===
+    const handleGenerateMOC = async () => {
+        if (!partsList.trim()) {
+            toast.error("Ingresa una lista de piezas");
+            return;
+        }
+
+        setIsMOCGenerating(true);
+        setGeneratedMOC(null);
+
+        try {
+            const parts = partsList
+                .trim()
+                .split("\n")
+            // Use deployed Supabase Edge Function
+            const response = await fetch(
+                'https://tevoogkifiszfontzkgd.supabase.co/functions/v1/generate-moc',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        theme_id: 158,  // Star Wars
+                        category: 'small_ship',
+                        max_parts: numSteps * 5,
+                        use_dna: true,
+                        use_physics: true
+                    })
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error('Error generando MOC');
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                setGeneratedMOC(data.ldr_content);
+                toast.success(`MOC generado! ${data.num_parts} piezas, SNOT: ${(data.snot_ratio * 100).toFixed(1)}%, Estabilidad: ${(data.stability_score * 100).toFixed(0)}%`);
+            } else {
+                throw new Error(data.error || 'Error desconocido');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            toast.error("Error al generar MOC con DNA. Verifica la consola.");
+        } finally {
+            setIsMOCGenerating(false);
+        }
+    };
+
+    const handleDownloadMOC = () => {
+        if (!generatedMOC) return;
+        const blob = new Blob([generatedMOC], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `moc_starwars_${Date.now()}.ldr`;
+        a.click();
+        URL.revokeObjectURL(url);
+        toast.success("MOC descargado!");
+    };
+
+    return (
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
+            <header className="max-w-7xl mx-auto flex justify-between items-center mb-8">
+                <div>
+                    <Link to="/" className="flex items-center gap-2 text-primary font-bold hover:underline mb-1">
+                        <Home className="w-4 h-4" /> Ir a la web
+                    </Link>
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Panel de Control</h1>
+                    <p className="text-gray-500">Herramientas de administración de Brickclinic</p>
+                </div>
+                <Button variant="outline" onClick={handleLogout} className="flex gap-2">
+                    <LogOut className="w-4 h-4" /> Salir
+                </Button>
+            </header>
+
+            <main className="max-w-7xl mx-auto">
+                <Tabs defaultValue="inventory" className="w-full">
+                    <TabsList className="grid w-full grid-cols-3">
+                        <TabsTrigger value="inventory" className="flex gap-2">
+                            <Database className="w-4 h-4" />
+                            Generador Inventario
+                        </TabsTrigger>
+                        <TabsTrigger value="similar" className="flex gap-2">
+                            <Copy className="w-4 h-4" />
+                            Sets Similares
+                        </TabsTrigger>
+                        <TabsTrigger value="moc" className="flex gap-2">
+                            <Sparkles className="w-4 h-4" />
+                            Generador MOCs
+                        </TabsTrigger>
+                    </TabsList>
+
+                    {/* === TAB 1: Inventory Generator === */}
+                    <TabsContent value="inventory">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Entrada</CardTitle>
+                                    <CardDescription>Referencia del set LEGO (ej. 75051-1)</CardDescription>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
+                                    <div>
+                                        <Label htmlFor="set-ref">Referencia del Set</Label>
+                                        <Input
+                                            id="set-ref"
+                                            placeholder="75051-1"
+                                            value={setRef}
+                                            onChange={(e) => setSetRef(e.target.value)}
+                                            className="mt-2"
+                                        />
+                                    </div>
+                                    <Button onClick={handleGenerateInventory} disabled={isGenerating} className="w-full">
+                                        {isGenerating ? (
+                                            <><Loader2 className="w-4 h-4 mr-2 animate-spin" />Generando...</>
+                                        ) : (
+                                            <><Database className="w-4 h-4 mr-2" />Generar CSV</>
+                                        )}
+                                    </Button>
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle>Resultado</CardTitle>
+                                    <CardDescription>CSV con inventario de piezas</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    {csvData ? (
+                                        <div className="space-y-4">
+                                            <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg max-h-64 overflow-auto">
+                                                <pre className="text-xs font-mono">{csvData.slice(0, 300)}...</pre>
+                                            </div>
+                                            <Button onClick={handleDownloadCSV} className="w-full" variant="outline">
+                                                <Download className="w-4 h-4 mr-2" />Descargar CSV
+                                            </Button>
+                                        </div>
+                                    ) : (
+                                        <p className="text-gray-500 text-center py-8">Genera un CSV para ver el resultado</p>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </TabsContent>
+
+                    {/* === TAB 2: Similar Sets === */}
+                    <TabsContent value="similar">
+                        <Card className="mt-6">
+                            <CardHeader>
+                                <CardTitle>Comparador de Sets</CardTitle>
+                                <CardDescription>Carga un CSV de inventario para encontrar sets similares</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="flex flex-col items-center justify-center py-12 text-center">
+                                    <Copy className="w-16 h-16 text-gray-300 mb-4" />
+                                    <p className="text-gray-500 mb-4">Funcionalidad próximamente disponible</p>
+                                    <p className="text-xs text-gray-400">
+                                        Podrás cargar CSV y comparar inventarios
+                                    </p>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+
+                    <p className="text-gray-500">Genera tu MOC</p>
+                    <p className="text-xs text-gray-400 mt-2">
+                        Nota: Requiere backend activo
+                    </p>
+                </div>
+                                    )}
+            </CardContent>
+        </Card>
+                        </div >
+                    </TabsContent >
+                </Tabs >
+            </main >
+        </div >
+    );
+};
+
+export default Dashboard;

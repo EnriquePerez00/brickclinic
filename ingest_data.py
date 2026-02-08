@@ -9,9 +9,11 @@ load_dotenv()
 # Database connection string
 # Ensure you have DATABASE_URL set in your .env file
 # Example: postgresql://postgres:password@db.supabase.co:5432/postgres
-DB_URL = os.getenv("DATABASE_URL")
+# Database connection string
+# Local connection string for Docker
+DATABASE_URL = os.getenv("DATABASE_URL")
 
-if not DB_URL:
+if not DATABASE_URL:
     print("Error: DATABASE_URL not found in .env file.")
     print("Please set it to your Supabase connection string.")
     print("Example: DATABASE_URL=postgresql://postgres.yourproject:password@aws-0-us-east-1.pooler.supabase.com:6543/postgres")
@@ -19,7 +21,7 @@ if not DB_URL:
 
 # Initialize database engine
 try:
-    engine = create_engine(DB_URL)
+    engine = create_engine(DATABASE_URL)
     connection = engine.connect()
     print("Connected to database successfully.")
     connection.close()
