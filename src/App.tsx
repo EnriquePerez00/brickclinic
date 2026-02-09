@@ -8,6 +8,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import EarlyAccessPage from "./pages/EarlyAccessPage";
 import Login from "./pages/admin/Login";
 import Dashboard from "./pages/admin/Dashboard";
 import InventoryGenerator from "./pages/admin/InventoryGenerator";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/about" element={<About />} />
+          <Route path="/early-access" element={<EarlyAccessPage />} />
 
 
           {/* Admin Routes */}

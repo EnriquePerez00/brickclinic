@@ -27,7 +27,7 @@ const HeroSection = () => {
               ♻️ Recupera, organiza, construye
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground mb-6 text-balance">
-              Tus <span className="text-primary">LEGOs</span> merecen una segunda oportunidad
+              Tus <span className="text-primary">LEGO®</span> merecen una segunda oportunidad
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
               Clasificamos, higienizamos, montamos sets completos y te proponemos construcciones originales. Cada servicio a tu medida.

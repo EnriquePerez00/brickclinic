@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { EarlyAccessPopup } from "@/components/EarlyAccessPopup";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
@@ -26,6 +27,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <Footer />
+      <EarlyAccessPopup />
     </div>
   );
 };

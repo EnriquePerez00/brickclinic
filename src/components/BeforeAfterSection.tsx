@@ -33,7 +33,7 @@ const BeforeAfterSection = () => {
             {/* After (background) */}
             <img
               src={afterImg}
-              alt="LEGO después de la limpieza"
+              alt="LEGO® después de la limpieza"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -45,7 +45,7 @@ const BeforeAfterSection = () => {
             >
               <img
                 src={beforeImg}
-                alt="LEGO antes de la limpieza"
+                alt="LEGO® antes de la limpieza"
                 className="w-full h-full object-cover"
                 style={{ width: `${(100 / position) * 100}%`, maxWidth: "none" }}
                 loading="lazy"

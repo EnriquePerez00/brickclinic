@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Droplets, Puzzle, Lightbulb, PackageOpen } from "lucide-react";
 import imgClasificacion from "@/assets/Brickclinic1.png";
@@ -45,6 +46,7 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   return (
     <section id="servicios" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
@@ -95,16 +97,19 @@ const ServicesSection = () => {
                   <span className="text-xs text-muted-foreground italic">
                     Consultar disponibilidad
                   </span>
-                  <a href="#presupuesto" className="text-sm font-semibold text-primary hover:underline">
+                  <button
+                    onClick={() => navigate("/early-access")}
+                    className="text-sm font-semibold text-primary hover:underline bg-transparent border-none p-0 cursor-pointer"
+                  >
                     Solicitar
-                  </a>
+                  </button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

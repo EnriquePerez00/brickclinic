@@ -73,7 +73,9 @@ serve(async (req) => {
                 parts:part_num (part_num, name, part_cat_id),
                 colors:color_id (id, name, rgb)
             `)
-            .eq('inventory_id', inventoryId);
+            .eq('inventory_id', inventoryId)
+            // User requested to EXCLUDE spare parts
+            .eq('is_spare', false);
 
         if (invError) {
             console.error('Inventory error:', invError);

@@ -173,6 +173,85 @@ const Dashboard = () => {
         }
     };
 
+    const handleDownloadMissingParts = async (setNum: string) => {
+        if (!csvFile) {
+            toast.error("No hay archivo CSV cargado. Por favor sube tu inventario primero.");
+            return;
+        }
+
+        try {
+            toast.info(`Calculando faltantes para ${setNum}...`);
+            const text = await csvFile.text();
+
+            // Basic CSV Parse (Matches backend logic)
+            const lines = text.split(/\r?\n/);
+            if (lines.length < 2) throw new Error("CSV vacío o inválido");
+
+            const header = lines[0].toLowerCase();
+            const sep = header.includes(';') ? ';' : ',';
+            const headers = header.split(sep).map(h => h.trim().replace(/"/g, ''));
+
+            const partNumIdx = headers.findIndex(h => h.includes('part') && h.includes('num'));
+            const colorIdIdx = headers.findIndex(h => h.includes('color') && (h.includes('id') || h.includes('name') === false)); // prioritizing ID logic
+            // Fallback for color if specialized logic needed, but backend uses parseInt so expects ID column
+            const quantityIdx = headers.findIndex(h => h.includes('qty') || h.includes('quantity'));
+
+            if (partNumIdx === -1) throw new Error("No se encontró columna 'part_num' en el CSV");
+
+            const userParts = lines.slice(1)
+                .map(line => {
+                    if (!line.trim()) return null;
+                    const parts = line.split(sep);
+
+                    // Parse color_id correctly (0 is valid - Black color!)
+                    const colorIdParsed = colorIdIdx !== -1 ? parseInt(parts[colorIdIdx]) : NaN;
+                    const quantityParsed = quantityIdx !== -1 ? parseInt(parts[quantityIdx]) : NaN;
+
+                    return {
+                        part_num: parts[partNumIdx]?.trim(),
+                        color_id: !isNaN(colorIdParsed) ? colorIdParsed : -1,
+                        quantity: !isNaN(quantityParsed) && quantityParsed > 0 ? quantityParsed : 1
+                    };
+                })
+                .filter(p => p && p.part_num);
+
+            const { data, error } = await supabase.rpc('get_set_missing_parts', {
+                p_set_num: setNum,
+                user_parts: userParts
+            });
+
+            if (error) throw error;
+
+            if (!data || data.length === 0) {
+                toast.success("¡Felicidades! Tienes todas las piezas.");
+                return;
+            }
+
+            // Generate "piezas_pdtes" CSV
+            const csvRows = [
+                "part_num,color_id,quantity,part_name,color_name"
+            ];
+
+            data.forEach((row: any) => {
+                csvRows.push(`${row.part_num},${row.color_id},${row.missing_qty},"${(row.part_name || '').replace(/"/g, '""')}","${(row.color_name || '').replace(/"/g, '""')}"`);
+            });
+
+            const blob = new Blob([csvRows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `set_${setNum}_piezas_pdtes.csv`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            toast.success(`Descargado: set_${setNum}_piezas_pdtes.csv (Faltan ${data.length} tipos de piezas)`);
+
+        } catch (error: any) {
+            console.error("Error missing parts:", error);
+            toast.error("Error al calcular faltantes: " + error.message);
+        }
+    };
+
     const handleDownloadMOC = () => {
         if (!generatedMOC) return;
         const blob = new Blob([generatedMOC], { type: "text/plain" });
@@ -343,6 +422,7 @@ const Dashboard = () => {
                                                 const file = e.target.files?.[0];
                                                 if (file) {
                                                     setIsComparingSets(true);
+                                                    setCsvFile(file); // Store file for later use
                                                     setSimilarSets(null);
 
                                                     const processUpload = async () => {
@@ -404,6 +484,8 @@ const Dashboard = () => {
                                                                             toast.info(`Analizando ${msg.total} sets candidatos...`);
                                                                         } else if (msg.type === 'error') {
                                                                             toast.error(`Error en stream: ${msg.message}`);
+                                                                        } else if (msg.type === 'debug') {
+                                                                            console.log('DEBUG SERVER:', msg.data);
                                                                         }
                                                                     } catch (e) {
                                                                         console.warn('Error parsing JSON chunk', e);
@@ -477,7 +559,7 @@ const Dashboard = () => {
                                                                 </thead>
                                                                 <tbody className="divide-y divide-gray-100">
                                                                     {categorySets.map((set: any, index: number) => (
-                                                                        <tr key={set.set_num} className="hover:bg-blue-50/40 transition-colors">
+                                                                        <tr key={`${set.set_num}-${index}`} className="hover:bg-blue-50/40 transition-colors">
                                                                             <td className="p-4">
                                                                                 <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full font-bold text-sm shadow-sm ${index === 0 ? 'bg-yellow-100 text-yellow-700 ring-1 ring-yellow-200' :
                                                                                     index === 1 ? 'bg-gray-100 text-gray-700 ring-1 ring-gray-200' :
@@ -491,7 +573,7 @@ const Dashboard = () => {
                                                                             <td className="p-4 font-medium text-gray-800">{set.name}</td>
                                                                             <td className="p-4 text-gray-500">{set.year}</td>
                                                                             <td className="p-4 text-gray-700 font-mono font-medium">{set.total_parts || set.num_parts}</td>
-                                                                            <td className="p-4 text-gray-700 font-mono font-medium">{set.unique_parts || '-'}</td>
+                                                                            <td className="p-4 text-gray-700 font-mono font-medium">{set.missing_pieces !== undefined ? set.missing_pieces : '-'}</td>
                                                                             <td className="p-4">
                                                                                 <div className="flex items-center gap-3">
                                                                                     <div className="flex-1 bg-gray-100 rounded-full h-2.5 overflow-hidden ring-1 ring-gray-200/50">
@@ -509,8 +591,8 @@ const Dashboard = () => {
                                                                                         }`}>{set.match_percent || set.similarity}%</span>
                                                                                     <button
                                                                                         className="p-1.5 hover:bg-gray-100 rounded-lg text-gray-400 hover:text-blue-600 transition-colors ml-2"
-                                                                                        title="Ver documentación/pedido"
-                                                                                        onClick={() => toast.info(`Ver documentación del set ${set.set_num}`)}
+                                                                                        title="Descargar piezas faltantes (CSV)"
+                                                                                        onClick={() => handleDownloadMissingParts(set.set_num)}
                                                                                     >
                                                                                         <FileText className="w-4 h-4" />
                                                                                     </button>

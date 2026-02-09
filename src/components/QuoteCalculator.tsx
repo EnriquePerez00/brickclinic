@@ -17,6 +17,9 @@ const steps = [
           <li><strong>15 kg:</strong> Entre 20€ y 28€</li>
           <li><strong>30 kg:</strong> Entre 35€ y 50€</li>
         </ul>
+        <div className="mt-3 bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded-md border border-green-200 inline-block">
+          Si el volumen {'>'} 5kg podemos organizar la recogida gratis
+        </div>
         <p className="mt-2 text-xs italic">
           Disponemos de descuentos con proveedores logísticos, podemos gestionarlo por ti si prefieres.
         </p>

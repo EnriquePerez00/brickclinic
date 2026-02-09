@@ -1,5 +1,10 @@
 -- Refactoring Matching Logic for Streaming and Theme Filtering
 
+DROP FUNCTION IF EXISTS get_candidate_inventories(jsonb, text[]);
+DROP FUNCTION IF EXISTS get_filtered_set_count(text[]);
+DROP FUNCTION IF EXISTS score_inventory_batch(int[], jsonb);
+DROP FUNCTION IF EXISTS get_set_missing_parts(varchar, jsonb);
+
 -- 1. Helper: Get Candidates (Optionally Filtered by Theme)
 CREATE OR REPLACE FUNCTION get_candidate_inventories(user_parts JSONB, filter_themes TEXT[] DEFAULT NULL)
 RETURNS TABLE (inventory_id INT, set_num VARCHAR)
@@ -78,7 +83,15 @@ $$;
 
 -- 2. Helper: Score a Batch of Inventories
 CREATE OR REPLACE FUNCTION score_inventory_batch(inventory_ids INT[], user_parts JSONB)
-RETURNS SETOF match_set_result
+RETURNS TABLE (
+    set_num VARCHAR,
+    name VARCHAR,
+    year INT,
+    num_parts INT,
+    img_url VARCHAR,
+    match_percent NUMERIC,
+    missing_pieces INT
+)
 language plpgsql
 STABLE
 AS $$
@@ -122,7 +135,8 @@ BEGIN
                     ((ss.total_pieces - ss.missing_pieces) / ss.total_pieces) * 100
                 ELSE 0 
             END, 
-        1) as match_percent
+        1) as match_percent,
+        ss.missing_pieces::INT -- New column for UI validation
     FROM set_scores ss
     -- Nexus: inventories.id used as link to inventory_parts via set_scores result
     JOIN inventories i ON i.id = ss.inventory_id
@@ -177,4 +191,3 @@ BEGIN
       AND (ip.quantity - COALESCE(uc.quantity, 0)) > 0;
 END;
 $$;
-

@@ -34,25 +34,42 @@ serve(async (req) => {
         const delimiter = lines[0].includes(';') ? ';' : ',';
 
         const headers = lines[0].toLowerCase().split(delimiter).map(h => h.trim().replace(/"/g, ''));
-        const partNumIdx = headers.findIndex(h => h.includes('part') && !h.includes('name') && !h.includes('cat'));
-        const colorIdIdx = headers.findIndex(h => h.includes('color'));
+        const partNumIdx = headers.findIndex(h => (h.includes('part') && h.includes('num')) || h === 'item no' || (h.includes('part') && !h.includes('name') && !h.includes('cat')));
+        const colorIdIdx = headers.findIndex(h => h.includes('color') && (h.includes('id') || !h.includes('name')));
         const quantityIdx = headers.findIndex(h => h.includes('qty') || h.includes('quantity'));
 
         if (partNumIdx === -1) throw new Error('Column "part_num" not found');
 
         const userParts = [];
+        const debugSamples = [];
         for (let i = 1; i < lines.length; i++) {
             const line = lines[i].trim();
             if (!line) continue;
             const parts = line.split(delimiter);
+
+            // Parse color_id correctly (0 is valid!)
+            const colorIdParsed = colorIdIdx !== -1 && parts.length > colorIdIdx ? parseInt(parts[colorIdIdx]) : NaN;
+            const quantityParsed = quantityIdx !== -1 && parts.length > quantityIdx ? parseInt(parts[quantityIdx]) : NaN;
+
+            const parsed = {
+                part_num: parts.length > partNumIdx ? parts[partNumIdx].trim() : "MISSING",
+                color_id: !isNaN(colorIdParsed) ? colorIdParsed : -1,
+                quantity: !isNaN(quantityParsed) && quantityParsed > 0 ? quantityParsed : 1
+            };
+
             if (parts.length > partNumIdx) {
-                userParts.push({
-                    part_num: parts[partNumIdx].trim(),
-                    color_id: colorIdIdx !== -1 ? (parseInt(parts[colorIdIdx]) || -1) : -1,
-                    quantity: quantityIdx !== -1 ? (parseInt(parts[quantityIdx]) || 1) : 1
-                });
+                userParts.push(parsed);
             }
+            if (i <= 5) debugSamples.push({ raw: line, parsed });
         }
+
+        const debugInfo = {
+            delimiter,
+            headers,
+            indices: { partNumIdx, colorIdIdx, quantityIdx },
+            total_parts_found: userParts.length,
+            samples: debugSamples
+        };
 
         // Initialize Supabase
         const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -85,6 +102,9 @@ serve(async (req) => {
                 const BATCH_SIZE = 50; // Increased for performance
 
                 try {
+                    // Send debug info FIRST
+                    controller.enqueue(encoder.encode(JSON.stringify({ type: 'debug', data: debugInfo }) + '\n'));
+
                     // Send initial metadata
                     const meta = JSON.stringify({ type: 'metadata', total: inventoryIds.length, user_parts: userParts.length }) + '\n';
                     controller.enqueue(encoder.encode(meta));

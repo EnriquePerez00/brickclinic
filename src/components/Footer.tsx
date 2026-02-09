@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-background py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 text-xl font-extrabold mb-4">
@@ -13,14 +13,14 @@ const Footer = () => {
               Brickclinic
             </div>
             <p className="text-sm opacity-70 leading-relaxed max-w-xs">
-              Artesanos del brick. Clasificamos, montamos y proponemos sets a partir de tus piezas LEGO con cuidado y pasión.
+              Artesanos del brick. Clasificamos, montamos y proponemos sets a partir de tus piezas LEGO® con cuidado y pasión.
             </p>
             <div className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/20 text-accent text-xs font-semibold">
               ♻️ Comprometidos con la economía circular
             </div>
           </div>
 
-          {/* Links */}
+          {/* Navigation */}
           <div>
             <h4 className="font-bold mb-4 text-sm uppercase tracking-wider opacity-70">Navegación</h4>
             <ul className="space-y-2 text-sm opacity-70">
@@ -28,8 +28,11 @@ const Footer = () => {
               <li><a href="#como-funciona" className="hover:opacity-100 transition-opacity">Cómo Funciona</a></li>
               <li><a href="#faq" className="hover:opacity-100 transition-opacity">Preguntas Frecuentes</a></li>
             </ul>
+          </div>
 
-            <h4 className="font-bold mt-6 mb-4 text-sm uppercase tracking-wider opacity-70">Legal</h4>
+          {/* Legal */}
+          <div>
+            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider opacity-70">Legal</h4>
             <ul className="space-y-2 text-sm opacity-70">
               <li><Link to="/privacy" className="hover:opacity-100 transition-opacity">Política de Privacidad</Link></li>
               <li><Link to="/terms" className="hover:opacity-100 transition-opacity">Términos del Servicio</Link></li>
@@ -51,8 +54,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/10 pt-8 text-center text-xs opacity-50">
-          © 2026 Brickclinic. Todos los derechos reservados.
+        <div className="border-t border-background/10 pt-8 pb-4">
+          <p className="text-xs text-muted-foreground/60 text-center max-w-4xl mx-auto mb-4 leading-relaxed">
+            Brickclinic es un servicio independiente y no está afiliado, patrocinado ni autorizado por The LEGO Group.
+            LEGO® es una marca registrada de The LEGO Group, que no patrocina, autoriza ni respalda este sitio web.
+            Brickclinic garantiza el uso de piezas originales.
+          </p>
+          <div className="text-center text-xs opacity-50">
+            © 2026 Brickclinic. Todos los derechos reservados.
+          </div>
         </div>
       </div>
     </footer>
