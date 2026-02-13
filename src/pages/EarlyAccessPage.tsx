@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,23 +12,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 
-// Step 1 Questions - Audience Segments
-const AUDIENCE_OPTIONS = [
-    { id: "recover", label: "Recuperar mis viejos sets", icon: History },
-    { id: "sort", label: "Ordenar el caos de piezas de mis hijos", icon: Layers },
-    { id: "complete", label: "Aprovechar lo que tengo para generar nuevos sets", icon: Puzzle },
-    { id: "invest", label: "Poner en valor para vender", icon: TrendingUp },
-];
-
-// Step 2 Questions
-const OWNERSHIP_OPTIONS = [
-    { id: "0-5", label: "0 - 5 sets" },
-    { id: "6-20", label: "6 - 20 sets" },
-    { id: "21-50", label: "21 - 50 sets" },
-    { id: "50+", label: "Más de 50 sets" },
-];
-
-// Step 3 Questions - Popular Themes
+// Popular Themes (Mostly proper names, keeping them static outside or inside if we want to translate some)
 const POPULAR_THEMES = [
     "Star Wars™", "LEGO® Technic", "LEGO® City", "Harry Potter™",
     "LEGO® Ninjago", "Marvel™ / DC™", "LEGO® Icons / Creator Expert",
@@ -35,6 +20,7 @@ const POPULAR_THEMES = [
 ];
 
 export default function EarlyAccessPage() {
+    const { t } = useTranslation();
     const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState<{
         question_1: string[];
@@ -57,6 +43,21 @@ export default function EarlyAccessPage() {
     const [isSuccess, setIsSuccess] = useState(false);
     const [inputOtherOpen, setInputOtherOpen] = useState(false);
     const { toast } = useToast();
+
+    // Move options inside component to use translations
+    const AUDIENCE_OPTIONS = [
+        { id: "recover", label: t('earlyAccess.steps.1.options.recover'), icon: History },
+        { id: "sort", label: t('earlyAccess.steps.1.options.sort'), icon: Layers },
+        { id: "complete", label: t('earlyAccess.steps.1.options.complete'), icon: Puzzle },
+        { id: "invest", label: t('earlyAccess.steps.1.options.invest'), icon: TrendingUp },
+    ];
+
+    const OWNERSHIP_OPTIONS = [
+        { id: "0-5", label: t('earlyAccess.steps.2.setsOptions.0-5') },
+        { id: "6-20", label: t('earlyAccess.steps.2.setsOptions.6-20') },
+        { id: "21-50", label: t('earlyAccess.steps.2.setsOptions.21-50') },
+        { id: "50+", label: t('earlyAccess.steps.2.setsOptions.50+') },
+    ];
 
     const handleOptionSelect = (key: "question_1" | "question_2" | "question_3", value: string) => {
         setAnswers((prev) => {
@@ -97,7 +98,7 @@ export default function EarlyAccessPage() {
     const handleNextStep = () => {
         if (step === 1 && answers.question_1.length === 0) {
             toast({
-                title: "Selecciona al menos una opción",
+                title: t('earlyAccess.toast.selectOption'),
                 variant: "destructive",
             });
             return;
@@ -130,14 +131,14 @@ export default function EarlyAccessPage() {
 
             setIsSuccess(true);
             toast({
-                title: "¡Gracias por apuntarte!",
-                description: "Te avisaremos en cuanto estemos listos.",
+                title: t('earlyAccess.toast.successTitle'),
+                description: t('earlyAccess.toast.successDesc'),
             });
         } catch (error: any) {
             console.error("Error submitting form:", error);
             toast({
-                title: "Error",
-                description: `Hubo un problema: ${error.message || "Inténtalo de nuevo."}`,
+                title: t('earlyAccess.toast.errorTitle'),
+                description: t('earlyAccess.toast.errorDesc', { message: error.message || "Inténtalo de nuevo." }),
                 variant: "destructive",
             });
         } finally {
@@ -165,12 +166,12 @@ export default function EarlyAccessPage() {
                             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Check className="w-10 h-10 text-primary" />
                             </div>
-                            <h2 className="text-3xl font-bold mb-4">¡Estás dentro!</h2>
+                            <h2 className="text-3xl font-bold mb-4">{t('earlyAccess.success.title')}</h2>
                             <p className="text-muted-foreground mb-8">
-                                Gracias por tu interés. Serás de los primeros en enterarte de nuestras novedades.
+                                {t('earlyAccess.success.description')}
                             </p>
                             <Button onClick={() => window.location.href = "/"} className="w-full">
-                                Volver al inicio
+                                {t('earlyAccess.success.home')}
                             </Button>
                         </motion.div>
                     </Card>
@@ -189,8 +190,8 @@ export default function EarlyAccessPage() {
 
                 <div className="w-full max-w-lg">
                     <div className="mb-8 text-center">
-                        <h1 className="text-4xl font-bold mb-2 tracking-tight">Acceso Anticipado</h1>
-                        <p className="text-muted-foreground">Ayúdanos a construir la mejor experiencia para ti.</p>
+                        <h1 className="text-4xl font-bold mb-2 tracking-tight">{t('earlyAccess.title')}</h1>
+                        <p className="text-muted-foreground">{t('earlyAccess.subtitle')}</p>
 
                         {/* Progress Bar */}
                         <div className="h-1 w-full bg-secondary mt-8 rounded-full overflow-hidden">
@@ -214,8 +215,8 @@ export default function EarlyAccessPage() {
                             >
                                 <Card className="border-border/50 shadow-lg backdrop-blur-sm bg-card/95">
                                     <CardHeader>
-                                        <CardTitle className="text-center">¿Qué buscas en Brick Clinic?</CardTitle>
-                                        <CardDescription className="text-center">Selecciona las opciones que te interesen (puedes elegir varias)</CardDescription>
+                                        <CardTitle className="text-center">{t('earlyAccess.steps.1.title')}</CardTitle>
+                                        <CardDescription className="text-center">{t('earlyAccess.steps.1.description')}</CardDescription>
                                     </CardHeader>
                                     <CardContent className="grid gap-3">
                                         {AUDIENCE_OPTIONS.map((option) => (
@@ -255,7 +256,7 @@ export default function EarlyAccessPage() {
                                             className="w-full text-lg py-6 group shadow-lg"
                                             disabled={answers.question_1.length === 0}
                                         >
-                                            Siguiente
+                                            {t('earlyAccess.steps.1.next')}
                                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </Button>
                                     </CardFooter>
@@ -287,12 +288,12 @@ export default function EarlyAccessPage() {
                                                     }
                                                 }}
                                             >
-                                                ← Atrás
+                                                {t('earlyAccess.steps.2.back')}
                                             </Button>
                                         </div>
-                                        <CardTitle>{answers.estimationType ? "¿Cuánto calculas que tienes?" : "Nos gustaría conocer el tamaño de tu colección de LEGO®, ¿cómo la estimarías?"}</CardTitle>
+                                        <CardTitle>{answers.estimationType ? t('earlyAccess.steps.2.title') : t('earlyAccess.steps.2.titleEstimated')}</CardTitle>
                                         {!answers.estimationType && (
-                                            <CardDescription>Elige la opción más cómoda para ti</CardDescription>
+                                            <CardDescription>{t('earlyAccess.steps.2.description')}</CardDescription>
                                         )}
                                     </CardHeader>
                                     <CardContent className="grid gap-4">
@@ -304,8 +305,8 @@ export default function EarlyAccessPage() {
                                                     onClick={() => handleEstimationTypeSelect("weight")}
                                                 >
                                                     <div className="flex flex-col text-left">
-                                                        <span className="font-semibold text-xl">Por peso aproximado</span>
-                                                        <span className="text-sm text-muted-foreground font-normal mt-1">(1 caja de zapatos ≈ 2 kg)</span>
+                                                        <span className="font-semibold text-xl">{t('earlyAccess.steps.2.options.weight.label')}</span>
+                                                        <span className="text-sm text-muted-foreground font-normal mt-1">{t('earlyAccess.steps.2.options.weight.sub')}</span>
                                                     </div>
                                                     <Scale className="w-8 h-8 text-primary opacity-80 group-hover:scale-110 transition-transform" />
                                                 </Button>
@@ -315,7 +316,7 @@ export default function EarlyAccessPage() {
                                                     className="h-auto p-6 justify-between items-center text-lg hover:border-primary hover:bg-primary/5 transition-all group"
                                                     onClick={() => handleEstimationTypeSelect("sets")}
                                                 >
-                                                    <span className="font-semibold text-xl">Por número de sets</span>
+                                                    <span className="font-semibold text-xl">{t('earlyAccess.steps.2.options.sets')}</span>
                                                     <Package className="w-8 h-8 text-primary opacity-80 group-hover:scale-110 transition-transform" />
                                                 </Button>
                                             </>
@@ -337,14 +338,14 @@ export default function EarlyAccessPage() {
                                                 />
 
                                                 <p className="text-center text-muted-foreground text-sm">
-                                                    Desliza para indicar el peso aproximado
+                                                    {t('earlyAccess.steps.2.weight.label')}
                                                 </p>
 
                                                 <Button
                                                     className="w-full text-lg py-6 mt-4"
                                                     onClick={confirmWeightSelection}
                                                 >
-                                                    Confirmar
+                                                    {t('earlyAccess.steps.2.weight.confirm')}
                                                 </Button>
                                             </div>
                                         )}
@@ -383,10 +384,10 @@ export default function EarlyAccessPage() {
                                             className="w-fit -ml-2 mb-2 text-muted-foreground"
                                             onClick={() => setStep(2)}
                                         >
-                                            ← Atrás
+                                            {t('earlyAccess.steps.3.back')}
                                         </Button>
-                                        <CardTitle className="text-center mb-2">¿Cuáles son tus series favoritas?</CardTitle>
-                                        <CardDescription className="text-center">Selecciona las que más te gusten o tengas en casa</CardDescription>
+                                        <CardTitle className="text-center mb-2">{t('earlyAccess.steps.3.title')}</CardTitle>
+                                        <CardDescription className="text-center">{t('earlyAccess.steps.3.description')}</CardDescription>
                                     </CardHeader>
                                     <CardContent>
                                         <div className="flex flex-wrap gap-3 justify-center">
@@ -410,7 +411,7 @@ export default function EarlyAccessPage() {
                                                     }`}
                                                 onClick={() => setInputOtherOpen(true)}
                                             >
-                                                {answers.otherSeries ? "Otras series añadidas" : "Otras series..."}
+                                                {answers.otherSeries ? t('earlyAccess.steps.3.otherAdded') : t('earlyAccess.steps.3.other')}
                                                 <Plus className="ml-2 w-4 h-4" />
                                             </Button>
                                         </div>
@@ -420,7 +421,7 @@ export default function EarlyAccessPage() {
                                             onClick={() => setStep(4)}
                                             className="w-full text-lg py-6 group mt-4"
                                         >
-                                            Siguiente
+                                            {t('earlyAccess.steps.3.next')}
                                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </Button>
                                     </CardFooter>
@@ -430,19 +431,19 @@ export default function EarlyAccessPage() {
                                 <Dialog open={inputOtherOpen} onOpenChange={setInputOtherOpen}>
                                     <DialogContent>
                                         <DialogHeader>
-                                            <DialogTitle>Otras series o temáticas</DialogTitle>
+                                            <DialogTitle>{t('earlyAccess.steps.3.dialog.title')}</DialogTitle>
                                             <DialogDescription>
-                                                Cuéntanos qué otras series coleccionas (Star Wars Vintage, Bionicle, Castle...)
+                                                {t('earlyAccess.steps.3.dialog.description')}
                                             </DialogDescription>
                                         </DialogHeader>
                                         <Textarea
-                                            placeholder="Escribe aquí tus otras series favoritas..."
+                                            placeholder={t('earlyAccess.steps.3.dialog.placeholder')}
                                             value={answers.otherSeries}
                                             onChange={(e) => setAnswers(prev => ({ ...prev, otherSeries: e.target.value }))}
                                             className="min-h-[100px]"
                                         />
                                         <DialogFooter>
-                                            <Button onClick={() => setInputOtherOpen(false)}>Guardar</Button>
+                                            <Button onClick={() => setInputOtherOpen(false)}>{t('earlyAccess.steps.3.dialog.save')}</Button>
                                         </DialogFooter>
                                     </DialogContent>
                                 </Dialog>
@@ -465,22 +466,22 @@ export default function EarlyAccessPage() {
                                             className="w-fit -ml-2 mb-2 text-muted-foreground"
                                             onClick={() => setStep(3)}
                                         >
-                                            ← Atrás
+                                            {t('earlyAccess.steps.4.back')}
                                         </Button>
-                                        <CardTitle className="leading-tight">Gracias por hablarnos de ti,</CardTitle>
+                                        <CardTitle className="leading-tight">{t('earlyAccess.steps.4.title')}</CardTitle>
                                         <CardDescription className="text-base mt-2">
-                                            y darles a muchas piezas de LEGO® sin uso una segunda vida.
+                                            {t('earlyAccess.steps.4.description')}
                                         </CardDescription>
                                     </CardHeader>
                                     <form onSubmit={handleSubmit}>
                                         <CardContent className="space-y-4 pt-4">
                                             <div className="space-y-2">
                                                 <label className="text-sm font-medium text-muted-foreground ml-1">
-                                                    Déjanos tu e.mail y nos ponemos en contacto contigo cuanto antes
+                                                    {t('earlyAccess.steps.4.emailLabel')}
                                                 </label>
                                                 <Input
                                                     type="email"
-                                                    placeholder="tu@email.com"
+                                                    placeholder={t('earlyAccess.steps.4.placeholder')}
                                                     required
                                                     value={answers.email}
                                                     onChange={(e) => setAnswers(prev => ({ ...prev, email: e.target.value }))}
@@ -494,10 +495,10 @@ export default function EarlyAccessPage() {
                                                 className="w-full text-lg py-6"
                                                 disabled={isSubmitting}
                                             >
-                                                {isSubmitting ? "Enviando..." : "Quiero ser de los primeros"}
+                                                {isSubmitting ? t('earlyAccess.steps.4.submitting') : t('earlyAccess.steps.4.submit')}
                                             </Button>
                                             <p className="text-xs text-muted-foreground text-center">
-                                                Envío asegurado y trazabilidad total de tus piezas en cada paso.
+                                                {t('earlyAccess.steps.4.security')}
                                             </p>
                                         </CardFooter>
                                     </form>

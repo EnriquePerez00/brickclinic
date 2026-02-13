@@ -1,0 +1,507 @@
+{
+    "navbar": {
+        "items": {
+            "services": "Serveis",
+            "howItWorks": "Com Funciona",
+            "pricing": "Quant Costa",
+            "value": "Preu",
+            "faq": "PMF"
+        },
+        "earlyAccess": "Accés Anticipat",
+        "requestAccess": "Sol·licitar Accés"
+    },
+    "hero": {
+        "badge": "♻️ Recupera, organitza, construeix",
+        "title": "Els teus <spanClass>LEGO®</spanClass> mereixen una segona oportunitat",
+        "description": "Classifiquem, higienitzem, muntem sets complets i et proposem construccions originals. Cada servei a la teva mida.",
+        "ctaPrimary": "Descobreix els Nostres Serveis",
+        "ctaSecondary": "Veure Com Funciona",
+        "footer": "Només peces originals · Serveis independents · Artesans del brick"
+    },
+    "services": {
+        "title": "Els Nostres Serveis",
+        "subtitle": "Cada servei és independent. Tria el que necessitis i nosaltres ens encarreguem de la resta. Preus i abast a mida.",
+        "items": {
+            "classification": {
+                "title": "Classificació i Higienització",
+                "description": "Separem totes les teves peces per tipus, color i mida. Cada brick passa per un procés de neteja manual amb productes segurs per al plàstic ABS. Les teves peces queden impecables i perfectament organitzades."
+            },
+            "assembly": {
+                "title": "Muntatge de Sets",
+                "description": "Completem els teus sets a partir de les peces originals que ja tens. Identifiquem les que falten i les aconseguim perquè puguis tornar a construir com el primer dia."
+            },
+            "proposals": {
+                "title": "Propostes de Sets Alternatius",
+                "description": "Ideem i suggerim construccions alternatives o originals a partir de les teves peces existents, complementant-les amb peces noves si és necessari. Creativitat sense límits."
+            },
+            "return": {
+                "title": "Devolució de Sets Separats",
+                "description": "Et tornem cada set perfectament separat, embossat i inventariat. A punt per guardar, exposar o regalar. Tot en ordre."
+            }
+        },
+        "consultAvailability": "Consultar disponibilitat",
+        "request": "Sol·licitar"
+    },
+    "beforeAfter": {
+        "title": "El Resultat Parla per Si Mateix",
+        "subtitle": "Lliba per veure la transformació. De peces oblidades a col·lecció restaurada.",
+        "before": "Abans",
+        "after": "Després",
+        "alt": {
+            "before": "LEGO® abans de la neteja",
+            "after": "LEGO® després de la neteja"
+        }
+    },
+    "pricing": {
+        "title": "Quant Costa",
+        "subtitle": "T'expliquem els nostres costos amb total transparència. Sense sorpreses.",
+        "steps": {
+            "shipping": {
+                "title": "1) Enviament inicial",
+                "price": "Variable",
+                "description": {
+                    "p1": "Podem ajudar-te a sol·licitar l'enviament, però et demanem que ens ho enviïs pel teu compte. Estimació anada i tornada nacional:",
+                    "list": {
+                        "small": "5 kg: Entre 10€ i 18€",
+                        "medium": "15 kg: Entre 20€ i 28€",
+                        "large": "30 kg: Entre 35€ i 50€"
+                    },
+                    "promo": "Si el volum > 5kg podem organitzar la recollida gratis",
+                    "note": "Disposem de descomptes amb proveïdors logístics, podem gestionar-ho per tu si ho prefereixes."
+                }
+            },
+            "analysis": {
+                "title": "2) Higienització i Anàlisi",
+                "price": "9,95€ / kg",
+                "description": {
+                    "main": "Higienització, identificació de peces defectuoses i anàlisi de reconstrucció o transformació.",
+                    "example": "Exemple: 5 kg = 49,75€"
+                }
+            },
+            "reconstruction": {
+                "title": "3) Reconstrucció (a demanda)",
+                "price": "14,90€ gestió + peces",
+                "description": {
+                    "main": "Reconstrucció o transformació en nous sets.",
+                    "costTitle": "Cost de peces (aprox):",
+                    "list": {
+                        "small": "Petites (1x1, studs): 0,01€ - 0,03€ / ut",
+                        "medium": "Mitjanes (2x4, 2x2): 0,05€ - 0,12€ / ut"
+                    },
+                    "note": "Peces grans o minifigures poden tenir preus més elevats. Sempre informem abans."
+                }
+            },
+            "return": {
+                "title": "4) Classificació i Devolució",
+                "price": "9,90€ / 500 peces útils",
+                "description": {
+                    "main": "Gestió de devolució de tot el contingut o únicament el contingut útil.",
+                    "example": "Exemple: 5 kg (aprox. 4000 peces) = 79,20€",
+                    "note": "Arrodonim al múltiple més proper per dalt."
+                }
+            }
+        }
+    },
+    "footer": {
+        "brand": {
+            "description": "Artesans del brick. Classifiquem, muntem i proposem sets a partir de les teves peces LEGO® amb cura i passió.",
+            "badge": "♻️ Compromesos amb l'economia circular"
+        },
+        "navigation": {
+            "title": "Navegació",
+            "links": {
+                "services": "Serveis",
+                "howItWorks": "Com Funciona",
+                "faq": "Preguntes Freqüents"
+            }
+        },
+        "legal": {
+            "title": "Legal",
+            "links": {
+                "privacy": "Política de Privacitat",
+                "terms": "Termes del Servei",
+                "about": "Sobre Nosaltres"
+            }
+        },
+        "contact": {
+            "title": "Contacte",
+            "location": "Barcelona, Espanya"
+        },
+        "disclaimer": "Brickclinic és un servei independent i no està afiliat, patrocinat ni autoritzat per The LEGO Group. LEGO® és una marca registrada de The LEGO Group, que no patrocina, autoritza ni recolza aquest lloc web. Brickclinic garanteix l'ús de peces originals.",
+        "copyright": "© 2026 Brickclinic. Tots els drets reservats."
+    },
+    "earlyAccess": {
+        "title": "Accés Anticipat",
+        "subtitle": "Ajuda'ns a construir la millor experiència per a tu.",
+        "steps": {
+            "1": {
+                "title": "Què busques a Brick Clinic?",
+                "description": "Selecciona les opcions que t'interessin (pots triar-ne diverses)",
+                "options": {
+                    "recover": "Recuperar els meus vells sets",
+                    "sort": "Ordenar el caos de peces dels meus fills",
+                    "complete": "Aprofitar el que tinc per generar nous sets",
+                    "invest": "Posar en valor per vendre"
+                },
+                "next": "Següent"
+            },
+            "2": {
+                "title": "Quant calcules que tens?",
+                "titleEstimated": "Ens agradaria conèixer la mida de la teva col·lecció de LEGO®, com l'estimaries?",
+                "description": "Tria l'opció més còmoda per a tu",
+                "options": {
+                    "weight": {
+                        "label": "Per pes aproximat",
+                        "sub": "(1 capsa de sabates ≈ 2 kg)"
+                    },
+                    "sets": "Per nombre de sets"
+                },
+                "setsOptions": {
+                    "0-5": "0 - 5 sets",
+                    "6-20": "6 - 20 sets",
+                    "21-50": "21 - 50 sets",
+                    "50+": "Més de 50 sets"
+                },
+                "weight": {
+                    "label": "Lliba per indicar el pes aproximat",
+                    "confirm": "Confirmar"
+                },
+                "back": "← Enrere"
+            },
+            "3": {
+                "title": "Quines són les teves sèries preferides?",
+                "description": "Selecciona les que més t'agradin o tinguis a casa",
+                "other": "Altres sèries...",
+                "otherAdded": "Altres sèries afegides",
+                "dialog": {
+                    "title": "Altres sèries o temàtiques",
+                    "description": "Explica'ns quines altres sèries col·lecciones (Star Wars Vintage, Bionicle, Castle...)",
+                    "placeholder": "Escriu aquí les teves altres sèries preferides...",
+                    "save": "Desar"
+                },
+                "next": "Següent",
+                "back": "← Enrere"
+            },
+            "4": {
+                "title": "Gràcies per parlar-nos de tu,",
+                "description": "i donar-li a moltes peces de LEGO® sense ús una segona vida.",
+                "emailLabel": "Deixa'ns el teu e.mail i ens posem en contacte amb tu com més aviat millor",
+                "placeholder": "teu@email.com",
+                "submit": "Vull ser dels primers",
+                "submitting": "Enviant...",
+                "security": "Enviament assegurat i traçabilitat total de les teves peces en cada pas.",
+                "back": "← Enrere"
+            }
+        },
+        "success": {
+            "title": "Ja ets dins!",
+            "description": "Gràcies pel teu interès. Seràs dels primers a assabentar-te de les nostres novetats.",
+            "home": "Tornar a l'inici"
+        },
+        "toast": {
+            "selectOption": "Selecciona almenys una opció",
+            "successTitle": "Gràcies per apuntar-te!",
+            "successDesc": "T'avisarem quan estiguem a punt.",
+            "errorTitle": "Error",
+            "errorDesc": "Hi ha hagut un problema: {{message}}"
+        }
+    },
+    "faq": {
+        "title": "Preguntes Freqüents",
+        "subtitle": "Resolem els teus dubtes més comuns. Si no trobes la resposta, escriu-nos.",
+        "items": {
+            "1": {
+                "question": "Accepteu tot tipus de peces?",
+                "answer": "Acceptem i treballem únicament amb peces i minifigures originals de LEGO®. Si ens fas arribar un altre tipus de joguines o peces d'altres marques, les separarem i te les tornarem juntament amb la teva comanda."
+            },
+            "2": {
+                "question": "Podeu netejar qualsevol tipus de brutícia?",
+                "answer": "Netegem i higienitzem industrialment utilitzant tecnologia hospitalària, però no fem miracles. Ens reservem el dret de tornar-te peces malmeses, no higienitzables (retoladors, corrosió, taques d'àcids) o peces amb plàstic abrasat pel sol o fregament."
+            },
+            "3": {
+                "question": "Garantibiu que no hi haurà errors en la classificació?",
+                "answer": "Treballem amb peces originals de segona mà, proveïdors oficials i LEGO.com. Podem cometre errors en la classificació o manca de peces... som humans. Si és el cas, avisa'ns i reposarem els possibles errors."
+            },
+            "4": {
+                "question": "Aconseguiu les minifigures originals dels sets?",
+                "answer": "Et podem suggerir minifigures de la mateixa sèrie que el set, però no necessàriament les específiques que acompanyen el set original si són molt cares o objectes de col·leccionista difícils d'aconseguir. Sempre et proposarem un substitut original i possible."
+            },
+            "5": {
+                "question": "He d'enviar els sets desmuntats?",
+                "answer": "Acceptem sets desordenats, peces barrejades i sets semimuntats. T'aconsellem que els desmuntis ja que ocuparan menys espai i l'enviament serà més eficient. Però si ens les envies juntes, també ens agrada desmuntar LEGO® i ho farem per tu. Si algunes peces no es poguessin separar (cola?, torsions?, plàstic semidesgastat?), les deixarem en una banda i les tornarem."
+            },
+            "6": {
+                "question": "Què puc esperar obtenir de les meves caixes de LEGO®?",
+                "answer": "Hi ha múltiples factors que afecten el nombre, varietat i cost dels sets que podem recuperar. Un set complet al 80% és més barat de reconstruir que un al 50%. A més, si és de sèries 'top vendes' com Star Wars™, LEGO® City o LEGO® Technic, hi ha més volum i millor preu de recanvis que en sèries minoritàries."
+            },
+            "7": {
+                "question": "Recupereu sets antics?",
+                "answer": "Recuperem sets posteriors a 1960. No obstant això, tingues en compte que l'import de les peces per a aquests sets antics pot costar una mica més a causa de la seva escassetat."
+            },
+            "8": {
+                "question": "Quin tipus de dissenys em proposeu amb les meves peces?",
+                "answer": "Depèn de la varietat i temàtica de les teves peces. Amb diversos sets de la mateixa temàtica semicomplets podem suggerir-te sets i noves creacions de la mateixa sèrie i tindrem més opcions que amb un calaix de maons 2x2 i 3x3 de colors blaus, blancs i vermells. Quantes menys sèries de sets barregis millor, i quanta més varietat de peces millor."
+            },
+            "9": {
+                "question": "És el vostre procés segur per a nens amb al·lèrgies?",
+                "answer": "Sí. Al no utilitzar suavitzants ni perfums industrials, i basar la nostra neteja en processos físics (ultrasons) i enzimàtics, minimitzem qualsevol risc de dermatitis per contacte."
+            },
+            "10": {
+                "question": "El procés fa malbé les peces de LEGO®?",
+                "answer": "Al contrari. El rentat ultrasònic és molt més delicat que un rentaplats domèstic. Al no haver-hi fricció mecànica agressiva, la brillantor original del plàstic es manté per més temps i les connexions segueixen sent perfectes."
+            }
+        }
+    },
+    "howItWorks": {
+        "title": "Com Funciona",
+        "subtitle": "Un procés transparent de principi a fi. Tu només envies, nosaltres fem la resta.",
+        "step": "Pas {{number}}",
+        "steps": {
+            "1": {
+                "title": "Enviament de peces i sets",
+                "description": "Ens envies les teves peces i sets embalats i en l'estat actual. Busques alguna cosa en concret? Digues-nos-ho."
+            },
+            "2": {
+                "title": "Higienització i proposta",
+                "description": "Els higienitzem i t'enviem una proposta de re-composició dels sets originals o transformació en altres sets oficials... suggeriments de la casa ;) (amb les seves instruccions de muntatge incloses)."
+            },
+            "3": {
+                "title": "Confirmació i preparació",
+                "description": "Ens confirmes que t'interessa, i ens posem mans a l'obra per preparar-ho... i si alguna cosa no podem, t'avisem abans."
+            },
+            "4": {
+                "title": "Empaquetat i enviament",
+                "description": "Empaquetem tot per separat: sets complets, nous sets, peces higienitzades, peces no utilitzades... i t'ho enviem perquè puguis gaudir-ne."
+            }
+        }
+    },
+    "about": {
+        "title": "Sobre Nosaltres",
+        "back": "Tornar a l'inici",
+        "intro": "Brickclinic neix d'una passió compartida: tornar la vida a milers de peces de construcció que acumulen pols en caixes oblidades.",
+        "description": "Som un equip d'entusiastes dedicats a classificar, netejar i organitzar col·leccions de bricks. No som una fàbrica automatitzada: som artesans que tracten cada peça amb la cura que mereix.",
+        "values": {
+            "craftsmanship": {
+                "title": "Artesania",
+                "desc": "Cada peça s'inspecciona i manipula a mà. Sense presses, sense dreceres."
+            },
+            "sustainability": {
+                "title": "Sostenibilitat",
+                "desc": "Reutilitzar és millor que comprar nou. Donem nova vida a peces existents."
+            },
+            "passion": {
+                "title": "Passió",
+                "desc": "Som col·leccionistes que entenen el valor emocional de cada set."
+            },
+            "trust": {
+                "title": "Confiança",
+                "desc": "Les teves peces mai es barregen amb les d'altres clients. Transparència total."
+            }
+        },
+        "disclaimer": "Brickclinic és un servei independent. No estem afiliats, recolzats ni connectats de cap manera amb el Grup LEGO. Totes les marques registrades esmentades pertanyen als seus respectius propietaris.",
+        "contact": "Tens preguntes? Escriu-nos a"
+    },
+    "notFound": {
+        "title": "404",
+        "description": "Vaja! Pàgina no trobada",
+        "home": "Tornar a l'inici"
+    },
+    "privacy": {
+        "title": "Política de Privacitat",
+        "lastUpdated": "Última actualització: febrer 2026",
+        "sections": {
+            "1": {
+                "title": "1. Responsable del Tractament",
+                "content": "Brickclinic (en endavant, \"nosaltres\") és el responsable del tractament de les dades personals recollides a través d'aquest lloc web. Pots contactar-nos a: hola@brickclinic.es."
+            },
+            "2": {
+                "title": "2. Dades que Recollim",
+                "content": "Podem recollir les següents dades personals:",
+                "list": [
+                    "Nom i cognoms",
+                    "Adreça de correu electrònic",
+                    "Número de telèfon",
+                    "Adreça postal (per a enviaments i devolucions)",
+                    "Dades de navegació (cookies, IP, tipus de navegador)"
+                ]
+            },
+            "3": {
+                "title": "3. Finalitat del Tractament",
+                "content": "Les teves dades s'utilitzen per a:",
+                "list": [
+                    "Gestionar i processar comandes de serveis",
+                    "Comunicar-nos amb tu sobre l'estat de la teva comanda",
+                    "Enviar pressupostos i factures",
+                    "Millorar els nostres serveis i experiència d'usuari",
+                    "Complir amb obligacions legals"
+                ]
+            },
+            "4": {
+                "title": "4. Base Legal",
+                "content": "El tractament es basa en: el teu consentiment explícit, l'execució d'un contracte de servei, i el compliment d'obligacions legals aplicables conforme al RGPD (Reglament General de Protecció de Dades, UE 2016/679)."
+            },
+            "5": {
+                "title": "5. Conservació de Dades",
+                "content": "Les dades es conservaran durant el temps necessari per complir amb la finalitat per a la qual van ser recollides i, en tot cas, durant els terminis legals de conservació aplicables."
+            },
+            "6": {
+                "title": "6. Drets de l'Usuari (RGPD)",
+                "content": "Tens dret a:",
+                "list": [
+                    "<strong>Accés:</strong> Sol·licitar una còpia de les teves dades personals.",
+                    "<strong>Rectificació:</strong> Corregir dades inexactes.",
+                    "<strong>Supressió:</strong> Sol·licitar l'eliminació de les teves dades (\"dret a l'oblit\").",
+                    "<strong>Limitació:</strong> Restringir el tractament en determinades circumstàncies.",
+                    "<strong>Portabilitat:</strong> Rebre les teves dades en format estructurat.",
+                    "<strong>Oposició:</strong> Oposar-te al tractament de les teves dades."
+                ],
+                "footer": "Per exercir qualsevol d'aquests drets, contacta amb nosaltres a hola@brickclinic.es."
+            },
+            "7": {
+                "title": "7. Cookies",
+                "content": "Aquest lloc web pot utilitzar cookies pròpies i de tercers per millorar l'experiència de navegació. Pots configurar el teu navegador per rebutjar cookies, tot i que això podria afectar la funcionalitat del lloc."
+            },
+            "8": {
+                "title": "8. Transferències Internacionals",
+                "content": "No realitzem transferències de dades personals fora de l'Espai Econòmic Europeu llevat que es garanteixin les salvaguardes adequades conforme al RGPD."
+            },
+            "9": {
+                "title": "9. Contacte i Reclamacions",
+                "content": "Si consideres que els teus drets no han estat respectats, pots presentar una reclamació davant l'Agència Espanyola de Protecció de Dades (AEPD) a <a href=\"https://www.aepd.es\" target=\"_blank\">www.aepd.es</a>."
+            }
+        }
+    },
+    "terms": {
+        "title": "Termes i Condicions de Servei",
+        "lastUpdated": "Última actualització: Febrer 2026",
+        "sections": {
+            "1": {
+                "title": "1. Sobre el Servei",
+                "content": "Brickclinic ofereix serveis de classificació, neteja, muntatge de sets, propostes de construcció creativa i devolucions organitzades per a peces de construcció tipus maó. Els nostres serveis es realitzen manualment amb cura professional, però impliquen la manipulació de peces de plàstic petites i delicades."
+            },
+            "2": {
+                "title": "2. Descàrrec de Responsabilitat de Propietat Intel·lectual",
+                "content": [
+                    "AVÍS IMPORTANT: Brickclinic és una iniciativa independent.",
+                    "<strong>No estem afiliats, recolzats, patrocinats ni connectats de cap manera amb LEGO Group</strong> ni amb cap de les seves subsidiàries o filials.",
+                    "LEGO®, el logotip de LEGO®, la Minifigura, DUPLO®, i totes les altres marques comercials i la imatge comercial de LEGO® són propietat de LEGO Group. Totes les referències a productes LEGO® en aquest lloc web es realitzen únicament amb fins identificatius i descriptius per indicar la compatibilitat dels nostres serveis.",
+                    "Brickclinic no fabrica, ven ni distribueix productes LEGO® nous. Proporcionem serveis de postvenda independents exclusivament per a peces que ja són propietat dels nostres clients."
+                ]
+            },
+            "3": {
+                "title": "3. Limitació de Responsabilitat — Riscos de Manipulació",
+                "content": "En utilitzar els nostres serveis, el client reconeix i accepta el següent:",
+                "list": [
+                    "<strong>Desgast i antiguitat:</strong> Els maons de construcció, especialment les peces antigues o molt usades, poden mostrar signes de desgast, decoloració o micro-esgarrapades. Aquests són inherents a l'edat i l'ús previ de les peces i no són causats pel nostre procés de manipulació.",
+                    "<strong>Risc de trencament:</strong> Brickclinic no assumeix responsabilitat pel trencament de peces que, a causa de la seva antiguitat, estat previ, fragilitat o estrès del material (com la síndrome de plàstic trencadís), puguin fer-se malbé durant la manipulació professional habitual. Tot i que exercim la màxima cura, existeix un risc inherent en manipular peces envellides.",
+                    "<strong>Degradació d'adhesius i impressions:</strong> Les peces impreses i amb adhesius poden patir degradació durant el procés de neteja a causa de la seva antiguitat o a l'estat de l'adhesiu. Les tractem amb especial cura (neteja a mà), però no podem garantir la seva preservació total si ja estan deteriorades.",
+                    "<strong>Peces faltants:</strong> No som responsables de les peces que ja faltaven a la col·lecció del client abans de la recepció. El nostre inventari es basa estrictament en el que rebem físicament.",
+                    "<strong>Límit de responsabilitat:</strong> En qualsevol cas, la responsabilitat total de Brickclinic per qualsevol reclamació derivada dels nostres serveis no excedirà el preu del servei pagat pel client per a la comanda específica en qüestió."
+                ]
+            },
+            "4": {
+                "title": "4. Enviaments i Trànsit",
+                "content": "Brickclinic no es fa responsable de la pèrdua o dany que ocorri durant el trànsit cap a les nostres instal·lacions. Recomanem encaridament utilitzar serveis d'enviament assegurats i amb seguiment. Un cop les peces s'entreguen a les nostres instal·lacions, estan sota la nostra cura i cobertes per les limitacions descrites a la Secció 3."
+            },
+            "5": {
+                "title": "5. Obligacions del Client",
+                "list": [
+                    "El client ha d'enviar únicament maons de construcció originals i compatibles.",
+                    "No s'han d'incloure peces no originals, bateries, components electrònics danyats, objectes estranys, ni brutícia excessiva/perillosa.",
+                    "El client és responsable de descriure amb precisió el contingut del seu enviament."
+                ]
+            },
+            "6": {
+                "title": "6. Preus i Pagaments",
+                "content": "Els preus es determinen en funció del pes, volum i els serveis específics sol·licitats. Es proporcionarà un pressupost final després de la recepció i inspecció, el qual ha de ser aprovat pel client abans de començar la feina. Si el client rebutja el pressupost final, les peces seran retornades a càrrec del client."
+            },
+            "7": {
+                "title": "7. Comandes No Reclamades",
+                "content": "Si una comanda no és recollida, pagada o si el client no respon a les notificacions durant més de 90 dies després de l'avís de finalització, Brickclinic es reserva el dret de disposar de les peces a la seva discreció per cobrir els costos d'emmagatzematge i gestió."
+            },
+            "8": {
+                "title": "8. Llei Aplicable",
+                "content": "Aquests termes es regeixen per les lleis d'Espanya. Qualsevol disputa relacionada amb aquests termes o els nostres serveis se sotmetrà a la jurisdicció exclusiva dels tribunals de Barcelona, Espanya."
+            },
+            "9": {
+                "title": "9. Contacte",
+                "content": "Per a qualsevol pregunta sobre aquests termes, si us plau contacteu-nos a <a href=\"mailto:info@brickclinic.es\">info@brickclinic.es</a>."
+            }
+        }
+    },
+    "caseStudy": {
+        "badge": "Cas d'Èxit Real",
+        "title": "Exemple de Posada en Valor",
+        "description": "Analitzem la rendibilitat de restaurar una <strong>galleda de 8kg de LEGO Technic</strong>.",
+        "originalMaterial": {
+            "title": "El Material Rebut",
+            "contentTitle": "Contingut (8 kg Total)",
+            "items": {
+                "bigSet": "1 Set Gran (2500 - 4000 peces)",
+                "mediumSets": "3 Sets Mitjans (500 - 1500 peces)",
+                "smallSets": "2 Sets Petits (100 - 400 peces)",
+                "random": "~20% Peces \"Random\" (Soltes)"
+            },
+            "initialState": {
+                "title": "Estat Inicial",
+                "description": "Sets parcialment desmuntats. Estimem un <strong>10% de peces perdudes</strong> que necessitem reposar."
+            }
+        },
+        "financials": {
+            "investmentTitle": "Inversió Necessària",
+            "costs": {
+                "logistics": "Logística (Enviaments)",
+                "hygiene": "Higienització i Anàlisi (8kg)",
+                "recovery": "Recuperació (Sets)",
+                "sorting": "Classificació i Devolució"
+            },
+            "totalCosts": "Total Costos",
+            "returnTitle": "Despeses vs Retorn",
+            "marketValueLabel": "Valor de Mercat (Sets Nous)",
+            "appreciationLabel": "Revaloració de la \"pila Lego\"",
+            "appreciationNote": "Revaloració neta des que ens els envies fins que els recuperes."
+        }
+    },
+    "statusTracker": {
+        "title": "Seguiment en Temps Real",
+        "description": "Consulta l'estat de la teva comanda en qualsevol moment. Transparència total.",
+        "statuses": {
+            "shipping": "Enviament",
+            "received": "Recepció",
+            "hygiene": "Higienització",
+            "categorization": "Categorització i anàlisi",
+            "reconstruction": "Reconstrucció",
+            "returnShipping": "Enviament"
+        },
+        "marker": "opcions, pressupostos i validació client",
+        "quote": {
+            "text": "\"El que es fa de pressa, aviat es desfà...\"",
+            "author": "— Cervantes (atribuït)"
+        },
+        "estimation": "Estimem una setmaneta entre la recepció i l'enviament de la nostra proposta i després 1-2 fins a l'enviament dels sets ja completats, i sempre t'informarem de per on anem en el procés."
+    },
+    "earlyAccessPopup": {
+        "messages": [
+            {
+                "headline": "Rescata els teus records del fons del calaix!",
+                "body": "Tens una muntanya de peces barrejades que solien ser naus i castells? A Brick Clinic utilitzem tecnologia d'IA per identificar, classificar i reconstruir els teus sets preferits a partir d'aquest caos de maons. No deixis que els teus records agafin pols.",
+                "cta": "Vull recuperar els meus sets ara!"
+            },
+            {
+                "headline": "De \"muntanya de peces\" a \"sets llestos per jugar\"",
+                "body": "Oblida't de passar hores buscant aquesta peça que falta. Envia'ns el teu cubell de LEGO barrejat i nosaltres ens encarreguem de la resta: neteja, classificació per IA i reconstrucció completa. Tu només preocupa't de gaudir de l'estrena.",
+                "cta": "Calcula el teu enviament i prova el servei"
+            },
+            {
+                "headline": "Restauració professional de LEGO amb IA",
+                "body": "Recuperem el valor de la teva col·lecció. Gràcies al nostre sistema avançat de reconeixement, convertim quilos de peces soltes en sets icònics llestos per muntar o vendre. Servei integral de neteja i completat de sets.",
+                "cta": "Comença la teva restauració aquí"
+            }
+        ],
+        "imageAlt": "Sets de LEGO Technic abans i després"
+    },
+    "carousel": {
+        "previous": "Diapositiva anterior",
+        "next": "Següent diapositiva"
+    }
+}

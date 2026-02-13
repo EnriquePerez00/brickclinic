@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import beforeImg from "@/assets/carrusel1.png";
 import afterImg from "@/assets/carrusel2.png";
 
 const BeforeAfterSection = () => {
   const [position, setPosition] = useState(50);
+  const { t } = useTranslation();
 
   return (
     <section id="nosotros" className="py-24 bg-secondary">
@@ -16,10 +18,10 @@ const BeforeAfterSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
-            El Resultado Habla por Sí Solo
+            {t('beforeAfter.title')}
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Desliza para ver la transformación. De piezas olvidadas a colección restaurada.
+            {t('beforeAfter.subtitle')}
           </p>
         </motion.div>
 
@@ -33,7 +35,7 @@ const BeforeAfterSection = () => {
             {/* After (background) */}
             <img
               src={afterImg}
-              alt="LEGO® después de la limpieza"
+              alt={t('beforeAfter.alt.after')}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
             />
@@ -45,7 +47,7 @@ const BeforeAfterSection = () => {
             >
               <img
                 src={beforeImg}
-                alt="LEGO® antes de la limpieza"
+                alt={t('beforeAfter.alt.before')}
                 className="w-full h-full object-cover"
                 style={{ width: `${(100 / position) * 100}%`, maxWidth: "none" }}
                 loading="lazy"
@@ -70,15 +72,15 @@ const BeforeAfterSection = () => {
               value={position}
               onChange={(e) => setPosition(Number(e.target.value))}
               className="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20"
-              aria-label="Comparar antes y después"
+              aria-label={t('beforeAfter.title')}
             />
 
             {/* Labels */}
             <span className="absolute top-4 left-4 bg-foreground/70 text-background px-3 py-1 rounded-full text-xs font-bold z-10">
-              Antes
+              {t('beforeAfter.before')}
             </span>
             <span className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold z-10">
-              Después
+              {t('beforeAfter.after')}
             </span>
           </div>
         </motion.div>

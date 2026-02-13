@@ -2,28 +2,14 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
-const MESSAGES = [
-  {
-    headline: "¡Rescata tus recuerdos del fondo del cajón!",
-    body: "¿Tienes una montaña de piezas mezcladas que solían ser naves y castillos? En Brick Clinic utilizamos tecnología de IA para identificar, clasificar y reconstruir tus sets favoritos a partir de ese caos de ladrillos. No dejes que tus recuerdos cojan polvo.",
-    cta: "¡Quiero recuperar mis sets ahora!"
-  },
-  {
-    headline: "De \"montaña de piezas\" a \"sets listos para jugar\"",
-    body: "Olvídate de pasar horas buscando esa pieza que falta. Envíanos tu cubo de LEGO mezclado y nosotros nos encargamos del resto: limpieza, clasificación por IA y reconstrucción completa. Tú solo preocúpate de disfrutar el re-estreno.",
-    cta: "Calcula tu envío y prueba el servicio"
-  },
-  {
-    headline: "Restauración profesional de LEGO con IA",
-    body: "Recuperamos el valor de tu colección. Gracias a nuestro sistema avanzado de reconocimiento, convertimos kilos de piezas sueltas en sets icónicos listos para montar o vender. Servicio integral de limpieza y completado de sets.",
-    cta: "Empieza tu restauración aquí"
-  }
-];
+import { useTranslation } from "react-i18next";
 
 export function EarlyAccessPopup() {
+  const { t } = useTranslation();
+  const messages = t('earlyAccessPopup.messages', { returnObjects: true }) as Array<{ headline: string, body: string, cta: string }>;
+
   const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState(MESSAGES[0]);
+  const [message, setMessage] = useState(messages[0]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -32,8 +18,8 @@ export function EarlyAccessPopup() {
     if (hasShown) return;
 
     // Select random message
-    const randomIndex = Math.floor(Math.random() * MESSAGES.length);
-    setMessage(MESSAGES[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    setMessage(messages[randomIndex]);
 
     const timer = setTimeout(() => {
       setIsOpen(true);
@@ -41,7 +27,7 @@ export function EarlyAccessPopup() {
     }, 20000); // 20 seconds delay
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [messages]);
 
   const handleCTA = () => {
     setIsOpen(false);
@@ -55,7 +41,7 @@ export function EarlyAccessPopup() {
           <div className="relative h-full">
             <img
               src="/lego_technic_contrast.png"
-              alt="Before and After LEGO Technic sets"
+              alt={t('earlyAccessPopup.imageAlt')}
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden" />

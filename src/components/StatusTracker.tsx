@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
 import { Package, Droplets, Grid3X3, Truck, Hammer, PackageOpen } from "lucide-react";
-
-const statuses = [
-  { icon: Truck, label: "Envío", done: true },
-  { icon: PackageOpen, label: "Recepción", done: true },
-  { icon: Droplets, label: "Higienización", done: true },
-  { icon: Grid3X3, label: "Categorización y análisis (*)", done: false, active: true },
-  { icon: Hammer, label: "Reconstrucción", done: false },
-  { icon: Truck, label: "Envío", done: false },
-];
+import { useTranslation } from "react-i18next";
 
 const StatusTracker = () => {
+  const { t } = useTranslation();
+
+  const statuses = [
+    { icon: Truck, label: t('statusTracker.statuses.shipping'), done: true },
+    { icon: PackageOpen, label: t('statusTracker.statuses.received'), done: true },
+    { icon: Droplets, label: t('statusTracker.statuses.hygiene'), done: true },
+    { icon: Grid3X3, label: `${t('statusTracker.statuses.categorization')} (*)`, done: false, active: true },
+    { icon: Hammer, label: t('statusTracker.statuses.reconstruction'), done: false },
+    { icon: Truck, label: t('statusTracker.statuses.returnShipping'), done: false },
+  ];
+
   return (
     <section className="py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -21,10 +24,10 @@ const StatusTracker = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
-            Seguimiento en Tiempo Real
+            {t('statusTracker.title')}
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Consulta el estado de tu pedido en cualquier momento. Transparencia total.
+            {t('statusTracker.description')}
           </p>
         </motion.div>
 
@@ -49,10 +52,10 @@ const StatusTracker = () => {
                   <div key={index} className="relative flex flex-col items-center gap-3 z-10 flex-1 px-1">
                     <div
                       className={`w-12 h-12 rounded-full flex items-center justify-center border-2 transition-colors shrink-0 bg-card ${s.done
-                          ? "bg-primary border-primary"
-                          : s.active
-                            ? "bg-primary/10 border-primary animate-pulse"
-                            : "border-border"
+                        ? "bg-primary border-primary"
+                        : s.active
+                          ? "bg-primary/10 border-primary animate-pulse"
+                          : "border-border"
                         }`}
                     >
                       <s.icon
@@ -74,7 +77,7 @@ const StatusTracker = () => {
                           animate={{ opacity: 1, y: 0 }}
                           className="mt-2 text-[10px] leading-tight font-medium text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20 max-w-[120px] mx-auto"
                         >
-                          opciones, presupuestos y validación cliente
+                          {t('statusTracker.marker')}
                         </motion.div>
                       )}
                     </div>
@@ -94,12 +97,12 @@ const StatusTracker = () => {
           className="text-center max-w-2xl mx-auto space-y-6"
         >
           <p className="text-lg italic font-medium text-foreground/80 border-l-4 border-primary/50 pl-4 inline-block">
-            "Lo que se hace deprisa, pronto se deshace..."
-            <span className="block text-sm font-normal text-muted-foreground mt-1 not-italic">— Cervantes (atribuido)</span>
+            {t('statusTracker.quote.text')}
+            <span className="block text-sm font-normal text-muted-foreground mt-1 not-italic">{t('statusTracker.quote.author')}</span>
           </p>
 
           <p className="text-xs text-muted-foreground leading-relaxed max-w-lg mx-auto bg-muted/50 p-4 rounded-lg">
-            Estimamos una semanita entre la recepción y el envío de nuestra propuesta y luego 1-2 hasta el envío de los set ya completados, y siempre te informaremos de por dónde vamos en el proceso.
+            {t('statusTracker.estimation')}
           </p>
         </motion.div>
       </div>

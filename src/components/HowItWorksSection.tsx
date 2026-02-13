@@ -1,30 +1,33 @@
 import { motion } from "framer-motion";
 import { Package, Droplets, Grid3X3, CheckCircle } from "lucide-react";
-
-const steps = [
-  {
-    icon: Package,
-    title: "Envío de piezas y sets",
-    description: "Nos envías tus piezas y sets embalados y en el estado actual. ¿Buscas algo en concreto? Dínoslo.",
-  },
-  {
-    icon: Droplets,
-    title: "Higienización y propuesta",
-    description: "Los higienizamos y te enviamos una propuesta de recomposición de los sets originales o transformación en otros sets oficiales... sugerencias de la casa ;) (con sus instrucciones de montaje incluidas).",
-  },
-  {
-    icon: Grid3X3,
-    title: "Confirmación y preparación",
-    description: "Nos confirmas que te interesa, y nos ponemos manos a la obra para prepararlo... y si algo no podemos, te avisamos antes.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Empaquetado y envío",
-    description: "Empaquetamos todo por separado: sets completos, nuevos sets, piezas higienizadas, piezas no utilizadas... y te lo enviamos para que puedas disfrutar de ellos.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const HowItWorksSection = () => {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      icon: Package,
+      title: t('howItWorks.steps.1.title'),
+      description: t('howItWorks.steps.1.description'),
+    },
+    {
+      icon: Droplets,
+      title: t('howItWorks.steps.2.title'),
+      description: t('howItWorks.steps.2.description'),
+    },
+    {
+      icon: Grid3X3,
+      title: t('howItWorks.steps.3.title'),
+      description: t('howItWorks.steps.3.description'),
+    },
+    {
+      icon: CheckCircle,
+      title: t('howItWorks.steps.4.title'),
+      description: t('howItWorks.steps.4.description'),
+    },
+  ];
+
   return (
     <section id="como-funciona" className="py-24">
       <div className="container mx-auto px-4">
@@ -35,10 +38,10 @@ const HowItWorksSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
-            Cómo Funciona
+            {t('howItWorks.title')}
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Un proceso transparente de principio a fin. Tú solo envías, nosotros hacemos el resto.
+            {t('howItWorks.subtitle')}
           </p>
         </motion.div>
 
@@ -65,7 +68,7 @@ const HowItWorksSection = () => {
               <div className={`bg-card rounded-xl p-6 border border-border shadow-sm flex-1 ${i % 2 === 0 ? "md:text-right md:mr-8" : "md:text-left md:ml-8"
                 }`}>
                 <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                  Paso {i + 1}
+                  {t('howItWorks.step', { number: i + 1 })}
                 </span>
                 <h3 className="text-lg font-bold text-foreground mt-1 mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>

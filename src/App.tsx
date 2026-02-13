@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import LanguageRedirector from "./components/LanguageRedirector";
 import Index from "./pages/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -24,23 +25,28 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/early-access" element={<EarlyAccessPage />} />
-
-
-          {/* Admin Routes */}
           <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="/admin/login" element={<Login />} />
           <Route path="/admin/dashboard" element={<Dashboard />} />
-          {/* Legacy redirects */}
           <Route path="/admin/inventory-generator" element={<Dashboard />} />
           <Route path="/admin/similar-sets" element={<Dashboard />} />
           <Route path="/admin/moc-generator" element={<Dashboard />} />
 
-          <Route path="*" element={<NotFound />} />
+          {/* Language Redirector for Root */}
+          <Route path="/" element={<LanguageRedirector />} />
+
+          {/* Localized Public Routes */}
+          <Route path="/:lang">
+            <Route index element={<Index />} />
+            <Route path="privacy" element={<Privacy />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="about" element={<About />} />
+            <Route path="early-access" element={<EarlyAccessPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+
+          {/* Catch-all for non-localized paths that aren't admin (redirect to root to be handled) */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
