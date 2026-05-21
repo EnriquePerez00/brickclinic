@@ -7,14 +7,14 @@
             "value": "Value",
             "faq": "FAQ"
         },
-        "earlyAccess": "Early Access",
-        "requestAccess": "Request Access"
+        "earlyAccess": "Request a Quote",
+        "requestAccess": "Request a Quote"
     },
     "hero": {
         "badge": "♻️ Recover, organize, build",
         "title": "Your <spanClass>LEGO®</spanClass> deserve a second chance",
         "description": "We sort, sanitize, assemble complete sets, and propose original builds. Each service tailored to you.",
-        "ctaPrimary": "Discover Our Services",
+        "ctaPrimary": "Request a Quote",
         "ctaSecondary": "See How It Works",
         "footer": "Original parts only · Independent services · Brick artisans"
     },
@@ -24,7 +24,7 @@
         "items": {
             "classification": {
                 "title": "Sorting & Sanitization",
-                "description": "We sort all your pieces by type, color and size. Each brick undergoes a manual cleaning process with ABS-safe products. Your pieces become spotless and perfectly organized."
+                "description": "Industrial Sanitization: Ultrasonic decontamination, Enzymatic hydrolysis (viruses and bacteria), High-purity Spotless Rinse, and Filtered convection drying. The Spotless Rinse removes lime and chlorine for a mirror finish, while Filtered Convection Drying uses controlled hot air to prevent micro-scratches and internal moisture."
             },
             "assembly": {
                 "title": "Set Assembly",
@@ -75,7 +75,7 @@
                 "price": "€9.95 / kg",
                 "description": {
                     "main": "Sanitization, identification of defective parts, and reconstruction or transformation analysis.",
-                    "example": "Example: 5 kg = €49.75"
+                    "example": "Example: 2 kg = €19.90"
                 }
             },
             "reconstruction": {
@@ -120,7 +120,9 @@
             "links": {
                 "privacy": "Privacy Policy",
                 "terms": "Terms of Service",
-                "about": "About Us"
+                "about": "About Us",
+                "cookies": "Cookie Policy",
+                "legalNotice": "Legal Notice"
             }
         },
         "contact": {
@@ -185,9 +187,9 @@
             "4": {
                 "title": "Thanks for telling us about yourself,",
                 "description": "and giving many unused LEGO® pieces a second life.",
-                "emailLabel": "Leave us your email and we'll get in touch with you as soon as possible",
+                "emailLabel": "Leave us your email and we will contact you as soon as possible to study your case",
                 "placeholder": "your@email.com",
-                "submit": "I want to be among the first",
+                "submit": "Send",
                 "submitting": "Sending...",
                 "security": "Insured shipping and total traceability of your pieces at every step.",
                 "back": "← Back"
@@ -216,7 +218,7 @@
             },
             "2": {
                 "question": "Can you clean any type of dirt?",
-                "answer": "We clean and sanitize industrially using hospital technology, but we don't work miracles. We reserve the right to return damaged pieces, non-sanitizable items (markers, corrosion, acid stains), or pieces with plastic burnt by the sun or friction."
+                "answer": "We clean and sanitize industrially using near-hospital technology, but we don't work miracles. We reserve the right to return damaged pieces, non-sanitizable items (permanent markers, corrosion, acid stains) or pieces with metallic erosions, chemical or light discolorations that are unfortunately non-recoverable."
             },
             "3": {
                 "question": "Do you guarantee there will be no sorting errors?",
@@ -228,7 +230,7 @@
             },
             "5": {
                 "question": "Do I have to send the sets disassembled?",
-                "answer": "We accept messy sets, mixed pieces, and semi-assembled sets. We advise you to disassemble them as they will take up less space and shipping will be more efficient. But if you send them together, we also like disassembling LEGO® and will do it for you. If some pieces cannot be separated (glue?, torsion?, semi-worn plastic?), we will leave them aside and return them."
+                "answer": "We accept messy sets and mixed pieces. We advise you to disassemble them for more efficient shipping and to ensure that each piece receives a deep sanitization on all its faces (especially at the attachment points). However, if you send them assembled, we will disassemble them for you with the utmost care. If some pieces cannot be separated (glue?, torsion?, semi-worn plastic?), we will leave them aside and return them."
             },
             "6": {
                 "question": "What can I expect to get from my LEGO® boxes?",
@@ -249,6 +251,10 @@
             "10": {
                 "question": "Does the process damage LEGO® pieces?",
                 "answer": "On the contrary. Ultrasonic washing is much gentler than a domestic dishwasher. Since there is no aggressive mechanical friction, the original shine of the plastic is maintained for longer and the connections remain perfect."
+            },
+            "11": {
+                "question": "Is your process environmentally friendly?",
+                "answer": "Absolutely. Our cleaning system is based on sustainability: we recirculate filtered water to minimize water consumption and use biodegradable enzymatic detergents that do not generate toxic waste."
             }
         }
     },
@@ -278,8 +284,8 @@
     "about": {
         "title": "About Us",
         "back": "Back to Home",
-        "intro": "Brickclinic was born from a shared passion: bringing back to life thousands of construction pieces gathering dust in forgotten boxes.",
-        "description": "We are a team of enthusiasts dedicated to sorting, cleaning, and organizing brick collections. We are not an automated factory: we are artisans who treat every piece with the care it deserves.",
+        "intro": "Brickclinic was born as a response to a reality we live at home: we love playing with LEGO® (and so do our kids!), but managing pieces so that sets are always 100% \"buildable\" is a delicate task... and that's exactly where we come in.",
+        "description": "We are a Barcelona-based team with a global reach, dedicated to sorting, cleaning, and organizing brick collections. We are not an automated factory: we are artisans who treat every piece with the care it deserves.",
         "values": {
             "craftsmanship": {
                 "title": "Craftsmanship",
@@ -312,7 +318,7 @@
         "sections": {
             "1": {
                 "title": "1. Data Controller",
-                "content": "Brickclinic (hereinafter, \"we\") is responsible for the processing of personal data collected through this website. You can contact us at: hola@brickclinic.es."
+                "content": "Brickclinic (hereinafter, \"we\") is responsible for the processing of personal data collected through this website. You can contact us at: info@brickclinic.eu."
             },
             "2": {
                 "title": "2. Data We Collect",
@@ -355,7 +361,7 @@
                     "<strong>Portability:</strong> Receive your data in a structured format.",
                     "<strong>Opposition:</strong> Object to the processing of your data."
                 ],
-                "footer": "To exercise any of these rights, contact us at hola@brickclinic.es."
+                "footer": "To exercise any of these rights, contact us at info@brickclinic.eu."
             },
             "7": {
                 "title": "7. Cookies",
@@ -425,22 +431,22 @@
             },
             "9": {
                 "title": "9. Contact",
-                "content": "For any questions regarding these terms, please contact us at <a href=\"mailto:info@brickclinic.es\">info@brickclinic.es</a>."
+                "content": "For any questions regarding these terms, please contact us at <a href=\"mailto:info@brickclinic.eu\">info@brickclinic.eu</a>."
             }
         }
     },
     "caseStudy": {
         "badge": "Real Success Case",
         "title": "Value Creation Example",
-        "description": "We analyze the profitability of restoring an <strong>8kg bucket of LEGO Technic</strong>.",
+        "description": "We analyze the profitability of restoring a <strong>4kg bucket of LEGO Technic</strong>.",
         "originalMaterial": {
             "title": "The Received Material",
-            "contentTitle": "Content (8 kg Total)",
+            "contentTitle": "Content (4 kg Total)",
             "items": {
-                "bigSet": "1 Large Set (2500 - 4000 pieces)",
+                "bigSet": "",
                 "mediumSets": "3 Medium Sets (500 - 1500 pieces)",
                 "smallSets": "2 Small Sets (100 - 400 pieces)",
-                "random": "~20% \"Random\" (Loose) Pieces"
+                "random": "+20% \"Random\" (Loose) Pieces <small>(total 4000 pieces)</small>"
             },
             "initialState": {
                 "title": "Initial State",
@@ -451,16 +457,18 @@
             "investmentTitle": "Investment Required",
             "costs": {
                 "logistics": "Logistics (Shipping)",
-                "hygiene": "Sanitization and Analysis (8kg)",
-                "recovery": "Recovery (Sets)",
-                "sorting": "Sorting and Return"
+                "hygiene": "Sanitization and Analysis (4kg)",
+                "recovery": "Recovery* (Sets)",
+                "sorting": "Sorting and Return",
+                "note": "* depending on number and type of pieces"
             },
             "totalCosts": "Total Costs",
             "returnTitle": "Expenses vs Return",
-            "marketValueLabel": "Market Value (New Sets)",
+            "marketValueLabel": "Market Value <small>(New Sets)</small>",
             "appreciationLabel": "Value Appreciation",
             "appreciationNote": "Net appreciation from when you send them to us until you get them back."
-        }
+        },
+        "cta": "Request a Quote"
     },
     "statusTracker": {
         "title": "Real-Time Tracking",
@@ -503,5 +511,59 @@
     "carousel": {
         "previous": "Previous slide",
         "next": "Next slide"
+    },
+    "cookies": {
+        "title": "Cookie Policy",
+        "sections": {
+            "1": {
+                "title": "1. What are cookies?",
+                "content": "Cookies are small text files stored on your device (computer, tablet, or mobile) when you visit a website. They allow the site to remember your preferences, improve your browsing experience, and provide statistical information about site usage."
+            },
+            "2": {
+                "title": "2. Types of cookies we use",
+                "content": "This website may use the following types of cookies:",
+                "list": [
+                    "Technical cookies (necessary): Essential for the site to function. They enable navigation and the use of basic features.",
+                    "Preference cookies: Allow the site to remember information to personalise your visit, such as your selected language.",
+                    "Analytical cookies: Help us understand how visitors interact with the site by collecting information anonymously.",
+                    "Third-party cookies: May be set by external services integrated into the site (e.g. analytics tools)."
+                ]
+            },
+            "3": {
+                "title": "3. Legal basis and consent management",
+                "content": "In accordance with European regulations (ePrivacy Directive and GDPR), non-essential cookies require your prior consent. You may accept or reject the use of non-essential cookies at any time via your browser settings or our cookie preferences panel."
+            },
+            "4": {
+                "title": "4. How to delete or block cookies",
+                "content": "You can configure your browser to refuse cookies or to alert you when a cookie is being sent. Please consult your browser instructions for managing cookies. Please note that disabling certain cookies may affect the functionality of this site."
+            }
+        }
+    },
+    "legal": {
+        "title": "Legal Notice",
+        "general": {
+            "title": "General Information",
+            "text": "In compliance with Article 10 of Law 34/2002 of 11 July on Information Society Services and Electronic Commerce (LSSICE), the following general information is provided:",
+            "name": "Company name: Infinigames Lab SL",
+            "nif": "VAT number: B88693437",
+            "address": "Registered address: Calle de la Innovacion, 42, 28001 Madrid",
+            "email": "Email: info@brickclinic.eu",
+            "phone": "Phone: +34 900 123 456",
+            "registry": "Companies Register: Registered in the Madrid Companies Register."
+        },
+        "property": {
+            "title": "Intellectual and Industrial Property",
+            "text": "The content of this website, including texts, images, graphics, logos, icons and software, is the property of Infinigames Lab SL or third parties who have authorised its use, and is protected by applicable intellectual and industrial property laws. Reproduction, distribution, public communication or transformation without express authorisation is prohibited."
+        },
+        "trademarks": {
+            "title": "Trademark Notice",
+            "lego": "LEGO® is a registered trademark of The LEGO Group. Brickclinic is not affiliated with, sponsored by, authorised by, or endorsed in any way by The LEGO Group.",
+            "original": "References to LEGO® products on this website are made solely for identification and descriptive purposes to indicate the compatibility of our services with such products.",
+            "nominative": "The use of the LEGO® trademark is made in accordance with the doctrine of fair nominative use and does not imply any commercial or institutional relationship with The LEGO Group."
+        },
+        "nature": {
+            "title": "Nature of the Service",
+            "text": "Brickclinic is a recovery and circular economy service for collectors. We do not manufacture, sell or distribute new LEGO® products. We provide independent after-sales services exclusively on parts already owned by our customers."
+        }
     }
 }

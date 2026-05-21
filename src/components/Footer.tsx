@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <footer className="bg-foreground text-background py-16">
@@ -37,9 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4 text-sm uppercase tracking-wider opacity-70">{t('footer.legal.title')}</h4>
             <ul className="space-y-2 text-sm opacity-70">
-              <li><Link to="/privacy" className="hover:opacity-100 transition-opacity">{t('footer.legal.links.privacy')}</Link></li>
-              <li><Link to="/terms" className="hover:opacity-100 transition-opacity">{t('footer.legal.links.terms')}</Link></li>
-              <li><Link to="/about" className="hover:opacity-100 transition-opacity">{t('footer.legal.links.about')}</Link></li>
+              <li><Link to={`/${i18n.language}/privacy`} className="hover:opacity-100 transition-opacity">{t('footer.legal.links.privacy')}</Link></li>
+              <li><Link to={`/${i18n.language}/terms`} className="hover:opacity-100 transition-opacity">{t('footer.legal.links.terms')}</Link></li>
+              <li><Link to={`/${i18n.language}/about`} className="hover:opacity-100 transition-opacity">{t('footer.legal.links.about')}</Link></li>
+              <li><Link to={`/${i18n.language}/cookies`} className="hover:opacity-100 transition-opacity">{t('footer.legal.links.cookies')}</Link></li>
+              <li><Link to={`/${i18n.language}/legal`} className="hover:opacity-100 transition-opacity">{t('footer.legal.links.legalNotice')}</Link></li>
             </ul>
           </div>
 
@@ -48,7 +50,7 @@ const Footer = () => {
             <h4 className="font-bold mb-4 text-sm uppercase tracking-wider opacity-70">{t('footer.contact.title')}</h4>
             <ul className="space-y-3 text-sm opacity-70">
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4" /> info@brickclinic.es
+                <Mail className="h-4 w-4" /> info@brickclinic.eu
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" /> {t('footer.contact.location')}

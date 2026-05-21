@@ -3,18 +3,18 @@
         "items": {
             "services": "Serveis",
             "howItWorks": "Com Funciona",
-            "pricing": "Quant Costa",
+            "pricing": "Preus",
             "value": "Preu",
-            "faq": "PMF"
+            "faq": "FAQ"
         },
-        "earlyAccess": "Accés Anticipat",
-        "requestAccess": "Sol·licitar Accés"
+        "earlyAccess": "Sol·licita el teu pressupost",
+        "requestAccess": "Sol·licita el teu pressupost"
     },
     "hero": {
         "badge": "♻️ Recupera, organitza, construeix",
         "title": "Els teus <spanClass>LEGO®</spanClass> mereixen una segona oportunitat",
         "description": "Classifiquem, higienitzem, muntem sets complets i et proposem construccions originals. Cada servei a la teva mida.",
-        "ctaPrimary": "Descobreix els Nostres Serveis",
+        "ctaPrimary": "Sol·licita el teu pressupost",
         "ctaSecondary": "Veure Com Funciona",
         "footer": "Només peces originals · Serveis independents · Artesans del brick"
     },
@@ -24,7 +24,7 @@
         "items": {
             "classification": {
                 "title": "Classificació i Higienització",
-                "description": "Separem totes les teves peces per tipus, color i mida. Cada brick passa per un procés de neteja manual amb productes segurs per al plàstic ABS. Les teves peces queden impecables i perfectament organitzades."
+                "description": "Higienització Industrial: Descontaminació ultrasònica, Hidròlisi enzimàtica (virus i bacteris), Esbandit d'alta puresa (Spotless Rinse) i Secat per convecció filtrada. L'esbandit d'alta puresa elimina calç i clor per a un acabat mirall, i el secat per convecció filtrada utilitza aire calent controlat per evitar micro-esgarrapades i humitat interna."
             },
             "assembly": {
                 "title": "Muntatge de Sets",
@@ -53,7 +53,7 @@
         }
     },
     "pricing": {
-        "title": "Quant Costa",
+        "title": "Preus",
         "subtitle": "T'expliquem els nostres costos amb total transparència. Sense sorpreses.",
         "steps": {
             "shipping": {
@@ -75,7 +75,7 @@
                 "price": "9,95€ / kg",
                 "description": {
                     "main": "Higienització, identificació de peces defectuoses i anàlisi de reconstrucció o transformació.",
-                    "example": "Exemple: 5 kg = 49,75€"
+                    "example": "Exemple: 2 kg = 19,9€"
                 }
             },
             "reconstruction": {
@@ -120,7 +120,9 @@
             "links": {
                 "privacy": "Política de Privacitat",
                 "terms": "Termes del Servei",
-                "about": "Sobre Nosaltres"
+                "about": "Sobre Nosaltres",
+                "cookies": "Politica de Cookies",
+                "legalNotice": "Avis Legal"
             }
         },
         "contact": {
@@ -185,9 +187,9 @@
             "4": {
                 "title": "Gràcies per parlar-nos de tu,",
                 "description": "i donar-li a moltes peces de LEGO® sense ús una segona vida.",
-                "emailLabel": "Deixa'ns el teu e.mail i ens posem en contacte amb tu com més aviat millor",
+                "emailLabel": "Deixa'ns el teu e.mail i et contactem el més aviat possible per a estudiar el teu cas",
                 "placeholder": "teu@email.com",
-                "submit": "Vull ser dels primers",
+                "submit": "Enviar",
                 "submitting": "Enviant...",
                 "security": "Enviament assegurat i traçabilitat total de les teves peces en cada pas.",
                 "back": "← Enrere"
@@ -216,7 +218,7 @@
             },
             "2": {
                 "question": "Podeu netejar qualsevol tipus de brutícia?",
-                "answer": "Netegem i higienitzem industrialment utilitzant tecnologia hospitalària, però no fem miracles. Ens reservem el dret de tornar-te peces malmeses, no higienitzables (retoladors, corrosió, taques d'àcids) o peces amb plàstic abrasat pel sol o fregament."
+                "answer": "Netegem i higienitzem industrialment utilitzant tecnologia gairebé hospitalària, però no fem miracles. Ens reservem el dret de tornar-te peces malmeses, no higienitzables (retoladors fixos, corrosió, taques d'àcids) o peces amb erosions metàl·liques, decoloracions químiques o lumíniques que són malauradament no recuperables."
             },
             "3": {
                 "question": "Garantibiu que no hi haurà errors en la classificació?",
@@ -249,6 +251,10 @@
             "10": {
                 "question": "El procés fa malbé les peces de LEGO®?",
                 "answer": "Al contrari. El rentat ultrasònic és molt més delicat que un rentaplats domèstic. Al no haver-hi fricció mecànica agressiva, la brillantor original del plàstic es manté per més temps i les connexions segueixen sent perfectes."
+            },
+            "11": {
+                "question": "És el vostre procés respectuós amb el medi ambient?",
+                "answer": "Totalment. El nostre sistema de neteja es basa en la sostenibilitat: recirculem l'aigua filtrada per minimitzar el consum hídric i utilitzem detergents enzimàtics biodegradables que no generen residus tòxics."
             }
         }
     },
@@ -278,8 +284,8 @@
     "about": {
         "title": "Sobre Nosaltres",
         "back": "Tornar a l'inici",
-        "intro": "Brickclinic neix d'una passió compartida: tornar la vida a milers de peces de construcció que acumulen pols en caixes oblidades.",
-        "description": "Som un equip d'entusiastes dedicats a classificar, netejar i organitzar col·leccions de bricks. No som una fàbrica automatitzada: som artesans que tracten cada peça amb la cura que mereix.",
+        "intro": "Brickclinic neix com a resposta a una realitat que vivim a casa: ens encanta jugar amb LEGO® (i als nostres fills també!), però gestionar les peces perquè els sets estiguin sempre al 100% \"muntables\" és un desafiament delicat... i per a això estem nosaltres.",
+        "description": "Som un equip amb seu a Barcelona, amb àmbit global, dedicat a classificar, netejar i organitzar col·leccions de bricks. No som una fàbrica automatitzada: som artesans que tracten cada peça amb la cura que mereix.",
         "values": {
             "craftsmanship": {
                 "title": "Artesania",
@@ -312,7 +318,7 @@
         "sections": {
             "1": {
                 "title": "1. Responsable del Tractament",
-                "content": "Brickclinic (en endavant, \"nosaltres\") és el responsable del tractament de les dades personals recollides a través d'aquest lloc web. Pots contactar-nos a: hola@brickclinic.es."
+                "content": "Brickclinic (en endavant, \"nosaltres\") és el responsable del tractament de les dades personals recollides a través d'aquest lloc web. Pots contactar-nos a: info@brickclinic.eu."
             },
             "2": {
                 "title": "2. Dades que Recollim",
@@ -355,7 +361,7 @@
                     "<strong>Portabilitat:</strong> Rebre les teves dades en format estructurat.",
                     "<strong>Oposició:</strong> Oposar-te al tractament de les teves dades."
                 ],
-                "footer": "Per exercir qualsevol d'aquests drets, contacta amb nosaltres a hola@brickclinic.es."
+                "footer": "Per exercir qualsevol d'aquests drets, contacta amb nosaltres a info@brickclinic.eu."
             },
             "7": {
                 "title": "7. Cookies",
@@ -425,22 +431,22 @@
             },
             "9": {
                 "title": "9. Contacte",
-                "content": "Per a qualsevol pregunta sobre aquests termes, si us plau contacteu-nos a <a href=\"mailto:info@brickclinic.es\">info@brickclinic.es</a>."
+                "content": "Per a qualsevol pregunta sobre aquests termes, si us plau contacteu-nos a <a href=\"mailto:info@brickclinic.eu\">info@brickclinic.eu</a>."
             }
         }
     },
     "caseStudy": {
         "badge": "Cas d'Èxit Real",
         "title": "Exemple de Posada en Valor",
-        "description": "Analitzem la rendibilitat de restaurar una <strong>galleda de 8kg de LEGO Technic</strong>.",
+        "description": "Analitzem la rendibilitat de restaurar una <strong>galleda de 4kg de LEGO Technic</strong>.",
         "originalMaterial": {
             "title": "El Material Rebut",
-            "contentTitle": "Contingut (8 kg Total)",
+            "contentTitle": "Contingut (4 kg Total)",
             "items": {
-                "bigSet": "1 Set Gran (2500 - 4000 peces)",
+                "bigSet": "",
                 "mediumSets": "3 Sets Mitjans (500 - 1500 peces)",
                 "smallSets": "2 Sets Petits (100 - 400 peces)",
-                "random": "~20% Peces \"Random\" (Soltes)"
+                "random": "+20% Peces \"Random\" (Soltes) <small>(total 4000 peces)</small>"
             },
             "initialState": {
                 "title": "Estat Inicial",
@@ -451,16 +457,18 @@
             "investmentTitle": "Inversió Necessària",
             "costs": {
                 "logistics": "Logística (Enviaments)",
-                "hygiene": "Higienització i Anàlisi (8kg)",
-                "recovery": "Recuperació (Sets)",
-                "sorting": "Classificació i Devolució"
+                "hygiene": "Higienització i Anàlisi (4kg)",
+                "recovery": "Recuperació* (Sets)",
+                "sorting": "Classificació i Devolució",
+                "note": "* depenent del num i tipus de peces"
             },
             "totalCosts": "Total Costos",
             "returnTitle": "Despeses vs Retorn",
-            "marketValueLabel": "Valor de Mercat (Sets Nous)",
+            "marketValueLabel": "Valor de Mercat <small>(Sets Nous)</small>",
             "appreciationLabel": "Revaloració de la \"pila Lego\"",
             "appreciationNote": "Revaloració neta des que ens els envies fins que els recuperes."
-        }
+        },
+        "cta": "Sol·licita el teu pressupost"
     },
     "statusTracker": {
         "title": "Seguiment en Temps Real",
@@ -503,5 +511,59 @@
     "carousel": {
         "previous": "Diapositiva anterior",
         "next": "Següent diapositiva"
+    },
+    "cookies": {
+        "title": "Politica de Cookies",
+        "sections": {
+            "1": {
+                "title": "1. Que son les cookies?",
+                "content": "Les cookies son petits arxius de text que s'emmagatzemen al vostre dispositiu quan visiteu un lloc web. Permeten que el lloc recordi les vostres preferencies i millori la vostra experiencia de navegacio."
+            },
+            "2": {
+                "title": "2. Tipus de cookies que utilitzem",
+                "content": "Aquest lloc web pot utilitzar els tipus de cookies seguents:",
+                "list": [
+                    "Cookies tecniques (necessaries): Imprescindibles per al funcionament del lloc.",
+                    "Cookies de preferencies: Permeten recordar informacio per personalitzar la vostra visita.",
+                    "Cookies analitiques: Ens ajuden a entendre com els visitants interactuen amb el lloc.",
+                    "Cookies de tercers: Poden ser installades per serveis externs integrats al lloc."
+                ]
+            },
+            "3": {
+                "title": "3. Base legal i gestio del consentiment",
+                "content": "D'acord amb la normativa europea (Directiva ePrivacy i RGPD), les cookies no estrictament necessaries requereixen el vostre consentiment previ."
+            },
+            "4": {
+                "title": "4. Com eliminar o bloquejar les cookies",
+                "content": "Podeu configurar el vostre navegador per tal que no accepti cookies. Tingueu en compte que deshabilitar certes cookies pot afectar el funcionament del lloc."
+            }
+        }
+    },
+    "legal": {
+        "title": "Avis Legal",
+        "general": {
+            "title": "Informacio General",
+            "text": "En compliment de l'article 10 de la Llei 34/2002 de Serveis de la Societat de la Informacio (LSSICE), es faciliten les dades d'informacio general seguents:",
+            "name": "Denominacio Social: Infinigames Lab SL",
+            "nif": "NIF: B88693437",
+            "address": "Domicili Social: Calle de la Innovacion, 42, 28001 Madrid",
+            "email": "Correu electronic: info@brickclinic.eu",
+            "phone": "Telefon: +34 900 123 456",
+            "registry": "Registre Mercantil: Inscrita al Registre Mercantil de Madrid."
+        },
+        "property": {
+            "title": "Propietat Intellectual i Industrial",
+            "text": "El contingut d'aquest lloc web es propietat d'Infinigames Lab SL i esta protegit per les lleis de propietat intellectual aplicables."
+        },
+        "trademarks": {
+            "title": "Avis sobre Marques Registrades",
+            "lego": "LEGO® es una marca registrada de The LEGO Group. Brickclinic no esta afiliat ni recolzat de cap manera per The LEGO Group.",
+            "original": "Les references a productes LEGO® es fan exclusivament amb finalitats identificatives per indicar la compatibilitat dels nostres serveis.",
+            "nominative": "L'us de la marca LEGO® es fa de conformitat amb la doctrina de l'us nominatiu lleal."
+        },
+        "nature": {
+            "title": "Naturalesa del Servei",
+            "text": "Brickclinic es un servei de recuperacio i economia circular per a collectors. Proporcionem serveis de postvenda independents sobre peces que ja son propietat dels nostres clients."
+        }
     }
 }

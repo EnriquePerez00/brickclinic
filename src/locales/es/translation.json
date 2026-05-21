@@ -3,17 +3,17 @@
         "items": {
             "services": "Servicios",
             "howItWorks": "Cómo Funciona",
-            "pricing": "Precios Servicios",
+            "pricing": "Precios",
             "faq": "FAQ"
         },
-        "earlyAccess": "Acceso Anticipado",
-        "requestAccess": "Solicitar Acceso"
+        "earlyAccess": "Solicita tu presupuesto",
+        "requestAccess": "Solicita tu presupuesto"
     },
     "hero": {
         "badge": "♻️ Recupera, organiza, construye",
         "title": "Tus <spanClass>LEGO®</spanClass> merecen una segunda oportunidad",
-        "description": "Clasificamos, higienizamos, montamos sets completos y te proponemos construcciones originales. Cada servicio a tu medida.",
-        "ctaPrimary": "Descubre Nuestros Servicios",
+        "description": "Clasificamos, higienitzamos, montamos sets completos y te proponemos construcciones originales. Cada servicio a tu medida.",
+        "ctaPrimary": "Solicita tu presupuesto",
         "ctaSecondary": "Ver Cómo Funciona",
         "footer": "Solo piezas originales · Servicios independientes · Artesanos del brick"
     },
@@ -23,7 +23,7 @@
         "items": {
             "classification": {
                 "title": "Clasificación e Higienización",
-                "description": "Separamos todas tus piezas por tipo, color y tamaño. Cada brick pasa por un proceso de limpieza manual con productos seguros para el plástico ABS. Tus piezas quedan impecables y perfectamente organizadas."
+                "description": "Higienización Industrial: Descontaminación ultrasónica, Hidrólisis enzimática (virus y bacterias), Aclarado de alta pureza (Spotless Rinse) y Secado por convección filtrada. El Aclarado de Alta Pureza elimina cal y cloro para un acabado espejo, y el Secado por Convección Filtrada usa aire caliente controlado para evitar micro-arañazos y humedad interna."
             },
             "assembly": {
                 "title": "Montaje de Sets",
@@ -74,7 +74,7 @@
                 "price": "9,95€ / kg",
                 "description": {
                     "main": "Higienización, identificación de piezas defectuosas y análisis de reconstrucción o transformación.",
-                    "example": "Ejemplo: 5 kg = 49,75€"
+                    "example": "Ejemplo: 2 kg = 19,9€"
                 }
             },
             "reconstruction": {
@@ -119,7 +119,9 @@
             "links": {
                 "privacy": "Política de Privacidad",
                 "terms": "Términos del Servicio",
-                "about": "Sobre Nosotros"
+                "about": "Sobre Nosotros",
+                "cookies": "Política de Cookies",
+                "legalNotice": "Aviso Legal"
             }
         },
         "contact": {
@@ -153,7 +155,7 @@
                         "label": "Por peso aproximado",
                         "sub": "(1 caja de zapatos ≈ 2 kg)"
                     },
-                    "sets": "Por número de sets"
+                    "sets": "Por nombre de sets"
                 },
                 "setsOptions": {
                     "0-5": "0 - 5 sets",
@@ -184,9 +186,9 @@
             "4": {
                 "title": "Gracias por hablarnos de ti,",
                 "description": "y darles a muchas piezas de LEGO® sin uso una segunda vida.",
-                "emailLabel": "Déjanos tu e.mail y nos ponemos en contacto contigo cuanto antes",
+                "emailLabel": "Déjanos tu e.mail y te contactamos cuanto antes para estudiar tu caso",
                 "placeholder": "tu@email.com",
-                "submit": "Quiero ser de los primeros",
+                "submit": "Enviar",
                 "submitting": "Enviando...",
                 "security": "Envío asegurado y trazabilidad total de tus piezas en cada paso.",
                 "back": "← Atrás"
@@ -215,7 +217,7 @@
             },
             "2": {
                 "question": "¿Podéis limpiar cualquier tipo de suciedad?",
-                "answer": "Limpiamos e higienizamos industrialmente utilizando tecnología hospitalaria, pero no hacemos milagros. Nos reservamos el derecho de devolverte piezas dañadas, no higienizables (rotuladores, corrosión, manchas de ácidos) o piezas con plástico abrasado por el sol o rozamiento."
+                "answer": "Limpiamos e higienizamos industrialmente utilizando tecnología casi hospitalaria, pero no hacemos milagros. Nos reservamos el derecho de devolverte piezas dañadas, no higienizables (rotuladores fijos, corrosión, manchas de ácidos) o piezas con erosiones metálicas, decoloraciones químicas o lumínicas que son desafortunadamente no recuperables."
             },
             "3": {
                 "question": "¿Garantizáis que no habrá errores en la clasificación?",
@@ -227,11 +229,11 @@
             },
             "5": {
                 "question": "¿Tengo que enviar los sets desmontados?",
-                "answer": "Aceptamos sets desordenados, piezas mezcladas y sets semimontados. Te aconsejamos que los desmontes ya que ocuparán menos espacio y el envío será más eficiente. Pero si nos las envías juntas, también nos gusta desmontar LEGO® y lo haremos por ti. Si algunas piezas no pudiesen separarse (¿pegamento?, ¿torsiones?, ¿plástico semidesgastado?), las dejaremos en un lado y las devolveremos."
+                "answer": "Aceptamos sets desordenados y piezas mezcladas. Te aconsejamos que los desmontes para un envío más eficiente y asegurar que cada pieza reciba una higienización profunda por todas sus caras (especialmente en los puntos de unión). No obstante, si nos las envías montadas, nosotros las desmontaremos por ti con el máximo cuidado. Si algunas piezas no pudiesen separarse (¿pegamento?, ¿torsiones?, ¿plástico semidesgastado?), las dejaremos en un lado y las devolveremos."
             },
             "6": {
                 "question": "¿Qué puedo esperar obtener de mis cajas de LEGO®?",
-                "answer": "Hay múltiples factores que afectan al número, variedad y coste de los sets que podemos recuperar. Un set completo al 80% es más barato de reconstruir que uno al 50%. Además, si es de series 'top ventas' como Star Wars™, LEGO® City o LEGO® Technic, hay más volumen y mejor precio de recambios que en series minoritarias."
+                "answer": "Hay múltiples factores que afectan al número, variedad y coste de los sets que podemos recuperar. Un set completo al 80% es más barato de reconstruir que un al 50%. Además, si es de series 'top ventas' como Star Wars™, LEGO® City o LEGO® Technic, hay más volumen y mejor precio de recambios que en series minoritarias."
             },
             "7": {
                 "question": "¿Recuperáis sets antiguos?",
@@ -248,6 +250,10 @@
             "10": {
                 "question": "¿El proceso daña las piezas de LEGO®?",
                 "answer": "Al contrario. El lavado ultrasónico es mucho más delicado que un lavavajillas doméstico. Al no haber fricción mecánica agresiva, el brillo original del plástico se mantiene por más tiempo y las conexiones siguen siendo perfectas."
+            },
+            "11": {
+                "question": "¿Es vuestro proceso respetuoso con el medio ambiente?",
+                "answer": "Totalmente. Nuestro sistema de limpieza se basa en la sostenibilidad: recirculamos el agua filtrada para minimizar el consumo hídrico y utilizamos detergentes enzimáticos biodegradables que no generan residuos tóxicos."
             }
         }
     },
@@ -277,8 +283,8 @@
     "about": {
         "title": "Sobre Nosotros",
         "back": "Volver al inicio",
-        "intro": "Brickclinic nace de una pasión compartida: devolver la vida a miles de piezas de construcción que acumulan polvo en cajas olvidadas.",
-        "description": "Somos un equipo de entusiastas dedicados a clasificar, limpiar y organizar colecciones de bricks. No somos una fábrica automatizada: somos artesanos que tratan cada pieza con el cuidado que merece.",
+        "intro": "Brickclinic nace como respuesta a una realidad que vivimos en casa: nos encanta jugar con LEGO® (¡y a nuestros hijos también!), pero gestionar las piezas para que los sets estén siempre al 100% \"montables\" es un desafío delicado... y para eso estamos nosotros.",
+        "description": "Somos un equipo basado en Barcelona, con ámbito global, dedicado a clasificar, limpiar y organizar colecciones de bricks. No somos una fábrica automatizada: somos artesanos que tratan cada pieza con el cuidado que merece.",
         "values": {
             "craftsmanship": {
                 "title": "Artesanía",
@@ -311,7 +317,7 @@
         "sections": {
             "1": {
                 "title": "1. Responsable del Tratamiento",
-                "content": "Brickclinic (en adelante, \"nosotros\") es el responsable del tratamiento de los datos personales recogidos a través de este sitio web. Puedes contactarnos en: hola@brickclinic.es."
+                "content": "Brickclinic (en adelante, \"nosotros\") es el responsable del tratamiento de los datos personales recogidos a través de este sitio web. Puedes contactarnos en: info@brickclinic.eu."
             },
             "2": {
                 "title": "2. Datos que Recogemos",
@@ -344,7 +350,7 @@
                 "content": "Los datos se conservarán durante el tiempo necesario para cumplir con la finalidad para la que fueron recogidos y, en todo caso, durante los plazos legales de conservación aplicables."
             },
             "6": {
-                "title": "6. Derechos del Usuario (RGPD)",
+                "title": "6. Usuario Rights (RGPD)",
                 "content": "Tienes derecho a:",
                 "list": [
                     "<strong>Acceso:</strong> Solicitar una copia de tus datos personales.",
@@ -354,7 +360,7 @@
                     "<strong>Portabilidad:</strong> Recibir tus datos en formato estructurado.",
                     "<strong>Oposición:</strong> Oponerte al tratamiento de tus datos."
                 ],
-                "footer": "Para ejercer cualquiera de estos derechos, contacta con nosotros en hola@brickclinic.es."
+                "footer": "Para ejercer cualquiera de estos derechos, contacta con nosotros en info@brickclinic.eu."
             },
             "7": {
                 "title": "7. Cookies",
@@ -424,22 +430,22 @@
             },
             "9": {
                 "title": "9. Contacto",
-                "content": "Para cualquier pregunta sobre estos términos, por favor contáctenos en <a href=\"mailto:info@brickclinic.es\">info@brickclinic.es</a>."
+                "content": "Para cualquier pregunta sobre estos términos, por favor contáctenos en <a href=\"mailto:info@brickclinic.eu\">info@brickclinic.eu</a>."
             }
         }
     },
     "caseStudy": {
         "badge": "Caso de Éxito Real",
         "title": "Ejemplo de Puesta en Valor",
-        "description": "Analizamos la rentabilidad de restaurar una <strong>cubeta de 8kg de LEGO Technic</strong>.",
+        "description": "Analizamos la rentabilidad de restaurar una <strong>cubeta de 4kg de LEGO Technic</strong>.",
         "originalMaterial": {
             "title": "El Material Recibido",
-            "contentTitle": "Contenido (8 kg Total)",
+            "contentTitle": "Contenido (4 kg Total)",
             "items": {
-                "bigSet": "1 Set Grande (2500 - 4000 piezas)",
+                "bigSet": "",
                 "mediumSets": "3 Sets Medianos (500 - 1500 piezas)",
                 "smallSets": "2 Sets Pequeños (100 - 400 piezas)",
-                "random": "~20% Piezas \"Random\" (Sueltas)"
+                "random": "+20% Piezas \"Random\" <small>(total 4000 piezas)</small>"
             },
             "initialState": {
                 "title": "Estado Inicial",
@@ -450,15 +456,17 @@
             "investmentTitle": "Gastos",
             "costs": {
                 "logistics": "Logística (Envíos)",
-                "hygiene": "Higienización y Análisis (8kg)",
-                "recovery": "Recuperación (Sets)",
-                "sorting": "Clasificación y Devolución"
+                "hygiene": "Higienización y Análisis (4kg)",
+                "recovery": "Recuperación* (Sets)",
+                "sorting": "Clasificación y Devolución",
+                "note": "* dependiendo num y tipo de piezas"
             },
             "totalCosts": "Gastos totales",
             "returnTitle": "Gastos vs Retorno",
-            "marketValueLabel": "Valor de Mercado (Sets Nuevos)",
+            "marketValueLabel": "Valor de Mercado <small>(Sets Nuevos)</small>",
             "appreciationLabel": "Revalorización de la \"pila Lego\""
-        }
+        },
+        "cta": "Solicita tu presupuesto"
     },
     "statusTracker": {
         "title": "Seguimiento en Tiempo Real",
@@ -501,5 +509,59 @@
     "carousel": {
         "previous": "Diapositiva anterior",
         "next": "Siguiente diapositiva"
+    },
+    "cookies": {
+        "title": "Política de Cookies",
+        "sections": {
+            "1": {
+                "title": "1. ¿Qué son las cookies?",
+                "content": "Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo (ordenador, tableta o móvil) cuando visitas un sitio web. Sirven para que el sitio recuerde tus preferencias, mejore tu experiencia de navegación y proporcione información estadística sobre el uso del sitio."
+            },
+            "2": {
+                "title": "2. Tipos de cookies que utilizamos",
+                "content": "Este sitio web puede utilizar los siguientes tipos de cookies:",
+                "list": [
+                    "Cookies técnicas (necesarias): Imprescindibles para el funcionamiento del sitio. Permiten la navegación y el uso de sus funciones básicas.",
+                    "Cookies de preferencias: Permiten recordar información para personalizar tu visita, como el idioma seleccionado.",
+                    "Cookies analíticas: Nos ayudan a entender cómo los visitantes interactúan con el sitio, recopilando información de forma anónima.",
+                    "Cookies de terceros: Pueden ser instaladas por servicios externos integrados en el sitio (p.ej., herramientas de análisis)."
+                ]
+            },
+            "3": {
+                "title": "3. Base legal y gestión del consentimiento",
+                "content": "De acuerdo con la normativa europea (Directiva ePrivacy y RGPD), las cookies no estrictamente necesarias requieren tu consentimiento previo. Puedes aceptar o rechazar el uso de cookies no esenciales en cualquier momento a través de la configuración de tu navegador o de nuestro panel de preferencias de cookies."
+            },
+            "4": {
+                "title": "4. Cómo eliminar o bloquear las cookies",
+                "content": "Puedes configurar tu navegador para que no acepte cookies, o para que te avise cuando se envía una. Consulta las instrucciones de tu navegador para gestionar las cookies. Ten en cuenta que deshabilitar ciertas cookies puede afectar al funcionamiento del sitio. Para más información sobre cookies, visita www.aboutcookies.org o www.allaboutcookies.org."
+            }
+        }
+    },
+    "legal": {
+        "title": "Aviso Legal",
+        "general": {
+            "title": "Información General",
+            "text": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), se facilitan los siguientes datos de información general:",
+            "name": "Denominación Social: Infinigames Lab SL",
+            "nif": "NIF: B88693437",
+            "address": "Domicilio Social: Calle de la Innovación, 42, 28001 Madrid",
+            "email": "Correo electrónico: info@brickclinic.eu",
+            "phone": "Teléfono: +34 900 123 456",
+            "registry": "Registro Mercantil: Inscrita en el Registro Mercantil de Madrid."
+        },
+        "property": {
+            "title": "Propiedad Intelectual e Industrial",
+            "text": "El contenido de este sitio web, incluyendo textos, imágenes, gráficos, logotipos, iconos y software, es propiedad de Infinigames Lab SL o de terceros que han autorizado su uso, y está protegido por las leyes de propiedad intelectual e industrial aplicables. Queda prohibida su reproducción, distribución, comunicación pública o transformación sin autorización expresa."
+        },
+        "trademarks": {
+            "title": "Aviso sobre Marcas Registradas",
+            "lego": "LEGO® es una marca registrada de The LEGO Group. Brickclinic no está afiliado, patrocinado, autorizado ni respaldado de ninguna manera por The LEGO Group.",
+            "original": "Las referencias a productos LEGO® en este sitio web se realizan exclusivamente con fines identificativos y descriptivos, para indicar la compatibilidad de nuestros servicios con dichos productos.",
+            "nominative": "El uso de la marca LEGO® se realiza de conformidad con la doctrina del uso nominativo leal, sin que ello implique ninguna relación comercial o institucional con The LEGO Group."
+        },
+        "nature": {
+            "title": "Naturaleza del Servicio",
+            "text": "Brickclinic es un servicio de recuperación y economía circular para coleccionistas. No fabricamos, vendemos ni distribuimos productos LEGO® nuevos. Proporcionamos servicios de posventa independientes, exclusivamente sobre piezas que ya son propiedad de nuestros clientes."
+        }
     }
 }
